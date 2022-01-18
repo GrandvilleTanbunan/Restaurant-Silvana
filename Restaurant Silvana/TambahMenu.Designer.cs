@@ -36,6 +36,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cb_category = new System.Windows.Forms.ComboBox();
             this.pb_image = new System.Windows.Forms.PictureBox();
+            this.btn_batal = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_image)).BeginInit();
             this.SuspendLayout();
@@ -46,7 +47,7 @@
             this.btnUpload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpload.Font = new System.Drawing.Font("Franklin Gothic Demi Cond", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpload.ForeColor = System.Drawing.Color.White;
-            this.btnUpload.Location = new System.Drawing.Point(153, 333);
+            this.btnUpload.Location = new System.Drawing.Point(82, 317);
             this.btnUpload.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnUpload.Name = "btnUpload";
             this.btnUpload.Size = new System.Drawing.Size(172, 38);
@@ -58,7 +59,7 @@
             // tb_nama_makanan
             // 
             this.tb_nama_makanan.Font = new System.Drawing.Font("Franklin Gothic Demi Cond", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_nama_makanan.Location = new System.Drawing.Point(82, 380);
+            this.tb_nama_makanan.Location = new System.Drawing.Point(11, 361);
             this.tb_nama_makanan.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tb_nama_makanan.Name = "tb_nama_makanan";
             this.tb_nama_makanan.Size = new System.Drawing.Size(314, 31);
@@ -73,7 +74,7 @@
             // tb_harga
             // 
             this.tb_harga.Font = new System.Drawing.Font("Franklin Gothic Demi Cond", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_harga.Location = new System.Drawing.Point(82, 421);
+            this.tb_harga.Location = new System.Drawing.Point(11, 402);
             this.tb_harga.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tb_harga.Name = "tb_harga";
             this.tb_harga.Size = new System.Drawing.Size(314, 31);
@@ -90,10 +91,10 @@
             this.btnSimpan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSimpan.Font = new System.Drawing.Font("Franklin Gothic Demi Cond", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSimpan.ForeColor = System.Drawing.Color.White;
-            this.btnSimpan.Location = new System.Drawing.Point(149, 513);
+            this.btnSimpan.Location = new System.Drawing.Point(60, 479);
             this.btnSimpan.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnSimpan.Name = "btnSimpan";
-            this.btnSimpan.Size = new System.Drawing.Size(180, 55);
+            this.btnSimpan.Size = new System.Drawing.Size(215, 38);
             this.btnSimpan.TabIndex = 6;
             this.btnSimpan.Text = "Simpan";
             this.btnSimpan.UseVisualStyleBackColor = false;
@@ -106,7 +107,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(487, 43);
+            this.panel1.Size = new System.Drawing.Size(336, 43);
             this.panel1.TabIndex = 7;
             // 
             // label1
@@ -128,7 +129,7 @@
             "Makanan",
             "Minuman",
             "Snack"});
-            this.cb_category.Location = new System.Drawing.Point(82, 458);
+            this.cb_category.Location = new System.Drawing.Point(11, 439);
             this.cb_category.Name = "cb_category";
             this.cb_category.Size = new System.Drawing.Size(314, 34);
             this.cb_category.TabIndex = 8;
@@ -137,7 +138,7 @@
             // pb_image
             // 
             this.pb_image.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb_image.Location = new System.Drawing.Point(96, 65);
+            this.pb_image.Location = new System.Drawing.Point(25, 49);
             this.pb_image.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pb_image.Name = "pb_image";
             this.pb_image.Size = new System.Drawing.Size(286, 262);
@@ -146,12 +147,28 @@
             this.pb_image.TabStop = false;
             this.pb_image.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // btn_batal
+            // 
+            this.btn_batal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.btn_batal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_batal.Font = new System.Drawing.Font("Franklin Gothic Demi Cond", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_batal.ForeColor = System.Drawing.Color.White;
+            this.btn_batal.Location = new System.Drawing.Point(60, 523);
+            this.btn_batal.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btn_batal.Name = "btn_batal";
+            this.btn_batal.Size = new System.Drawing.Size(215, 38);
+            this.btn_batal.TabIndex = 9;
+            this.btn_batal.Text = "Batal";
+            this.btn_batal.UseVisualStyleBackColor = false;
+            this.btn_batal.Click += new System.EventHandler(this.btn_batal_Click);
+            // 
             // TambahMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(487, 600);
+            this.ClientSize = new System.Drawing.Size(336, 600);
+            this.Controls.Add(this.btn_batal);
             this.Controls.Add(this.cb_category);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnSimpan);
@@ -159,7 +176,7 @@
             this.Controls.Add(this.tb_nama_makanan);
             this.Controls.Add(this.btnUpload);
             this.Controls.Add(this.pb_image);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "TambahMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -181,5 +198,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cb_category;
+        private System.Windows.Forms.Button btn_batal;
     }
 }

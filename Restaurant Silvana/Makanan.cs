@@ -70,16 +70,19 @@ namespace Restaurant_Silvana
             set { _category = value; lbl_nomor.Text = value.ToString(); }
         }
 
-
-
-
-
+        
 
         private void Makanan_Load(object sender, EventArgs e)
         {
             AddEvent();
             //label1.Text = enabled.ToString();
             pnl_border.Visible = tercentang;
+
+            lbl_nama.MaximumSize = new Size(150,0);
+            lbl_nama.AutoSize = true;
+
+            lbl_harga.MaximumSize = new Size(100, 0);
+            lbl_harga.AutoSize = true;
         }
 
         #region Hover mouse 
@@ -135,57 +138,53 @@ namespace Restaurant_Silvana
         #region Munculkan border kuning
         public void pb_icon_Click(object sender, EventArgs e)
         {
-            if(tercentang == true)
-            {
-                tercentang = false;
+            //if(tercentang == true)
+            //{
+            //    tercentang = false;
 
-                pnl_border.Visible = tercentang;
+            //    pnl_border.Visible = tercentang;
                
-            }
-            else
-            {
-                tercentang = true;
-                pnl_border.Visible = tercentang;
+            //}
+            //else
+            //{
+            //    tercentang = true;
+            //    pnl_border.Visible = tercentang;
 
-            }
+            //}
 
         }
 
         private void lbl_nama_Click(object sender, EventArgs e)
         {
-            if (tercentang == true)
-            {
-                tercentang = false;
+            //if (tercentang == true)
+            //{
+            //    tercentang = false;
+            //    pnl_border.Visible = tercentang;
 
-                pnl_border.Visible = tercentang;
+            //}
+            //else
+            //{
+            //    tercentang = true;
+            //    pnl_border.Visible = tercentang;
 
-
-            }
-            else
-            {
-                tercentang = true;
-                pnl_border.Visible = tercentang;
-
-            }
+            //}
         }
 
         private void label2_Click(object sender, EventArgs e)
         {
-            if (tercentang == true)
-            {
-                tercentang = false;
+            //if (tercentang == true)
+            //{
+            //    tercentang = false;
 
-                pnl_border.Visible = tercentang;
+            //    pnl_border.Visible = tercentang;
 
+            //}
+            //else
+            //{
+            //    tercentang = true;
+            //    pnl_border.Visible = tercentang;
 
-
-            }
-            else
-            {
-                tercentang = true;
-                pnl_border.Visible = tercentang;
-
-            }
+            //}
         }
 
         #endregion

@@ -34,15 +34,16 @@
             this.pnl_border = new System.Windows.Forms.Panel();
             this.lbl_nomor = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pb_icon)).BeginInit();
+            this.pnl_border.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbl_harga
             // 
-            this.lbl_harga.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_harga.Font = new System.Drawing.Font("Franklin Gothic Medium", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_harga.ForeColor = System.Drawing.Color.White;
-            this.lbl_harga.Location = new System.Drawing.Point(9, 12);
+            this.lbl_harga.Location = new System.Drawing.Point(7, 8);
             this.lbl_harga.Name = "lbl_harga";
-            this.lbl_harga.Size = new System.Drawing.Size(99, 22);
+            this.lbl_harga.Size = new System.Drawing.Size(101, 22);
             this.lbl_harga.TabIndex = 2;
             this.lbl_harga.Text = "Harga Makanan";
             this.lbl_harga.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -53,12 +54,13 @@
             // lbl_nama
             // 
             this.lbl_nama.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_nama.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lbl_nama.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbl_nama.Font = new System.Drawing.Font("Franklin Gothic Demi Cond", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_nama.Font = new System.Drawing.Font("Franklin Gothic Demi Cond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_nama.ForeColor = System.Drawing.Color.White;
-            this.lbl_nama.Location = new System.Drawing.Point(8, 149);
+            this.lbl_nama.Location = new System.Drawing.Point(0, 139);
             this.lbl_nama.Name = "lbl_nama";
-            this.lbl_nama.Size = new System.Drawing.Size(186, 34);
+            this.lbl_nama.Size = new System.Drawing.Size(161, 22);
             this.lbl_nama.TabIndex = 1;
             this.lbl_nama.Text = "Nama Makanan";
             this.lbl_nama.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -68,9 +70,9 @@
             // 
             // pb_icon
             // 
-            this.pb_icon.Location = new System.Drawing.Point(8, 6);
+            this.pb_icon.Location = new System.Drawing.Point(3, 3);
             this.pb_icon.Name = "pb_icon";
-            this.pb_icon.Size = new System.Drawing.Size(186, 177);
+            this.pb_icon.Size = new System.Drawing.Size(155, 155);
             this.pb_icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb_icon.TabIndex = 0;
             this.pb_icon.TabStop = false;
@@ -83,21 +85,22 @@
             // 
             this.pnl_border.BackColor = System.Drawing.Color.Gold;
             this.pnl_border.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_border.Controls.Add(this.lbl_nomor);
             this.pnl_border.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_border.Location = new System.Drawing.Point(0, 0);
             this.pnl_border.Name = "pnl_border";
-            this.pnl_border.Size = new System.Drawing.Size(201, 190);
+            this.pnl_border.Size = new System.Drawing.Size(161, 161);
             this.pnl_border.TabIndex = 3;
             // 
             // lbl_nomor
             // 
             this.lbl_nomor.BackColor = System.Drawing.Color.Transparent;
             this.lbl_nomor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbl_nomor.Font = new System.Drawing.Font("Franklin Gothic Demi Cond", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_nomor.Font = new System.Drawing.Font("Franklin Gothic Demi Cond", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_nomor.ForeColor = System.Drawing.Color.White;
-            this.lbl_nomor.Location = new System.Drawing.Point(140, 10);
+            this.lbl_nomor.Location = new System.Drawing.Point(132, 11);
             this.lbl_nomor.Name = "lbl_nomor";
-            this.lbl_nomor.Size = new System.Drawing.Size(52, 26);
+            this.lbl_nomor.Size = new System.Drawing.Size(31, 26);
             this.lbl_nomor.TabIndex = 4;
             this.lbl_nomor.Text = "1";
             this.lbl_nomor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -108,17 +111,17 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
-            this.Controls.Add(this.lbl_nomor);
             this.Controls.Add(this.lbl_nama);
             this.Controls.Add(this.lbl_harga);
             this.Controls.Add(this.pb_icon);
             this.Controls.Add(this.pnl_border);
             this.Name = "Makanan";
-            this.Size = new System.Drawing.Size(201, 190);
+            this.Size = new System.Drawing.Size(161, 161);
             this.Load += new System.EventHandler(this.Makanan_Load);
             this.MouseEnter += new System.EventHandler(this.Makanan_MouseEnter);
             this.MouseLeave += new System.EventHandler(this.Makanan_MouseLeave);
             ((System.ComponentModel.ISupportInitialize)(this.pb_icon)).EndInit();
+            this.pnl_border.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

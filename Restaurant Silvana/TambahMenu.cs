@@ -47,11 +47,15 @@ namespace Restaurant_Silvana
 
             if (objbll.saveItems(tb_nama_makanan.Text, tb_harga.Text, pb_image.Image, cb_category.SelectedIndex))
             {
-                MessageBox.Show("Menu baru sudah tersimpan");
+                MessageBox.Show("Menu Baru Berhasil Tersimpan!");
+                Main f = new Main();
+                f.DynamicUserControlMenu(0);
+                f.DynamicUserControl(0);
+
             }
             else
             {
-                MessageBox.Show("Gagal menyimpan");
+                MessageBox.Show("Gagal Menyimpan!");
             }
         }
 
@@ -147,6 +151,11 @@ namespace Restaurant_Silvana
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_batal_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

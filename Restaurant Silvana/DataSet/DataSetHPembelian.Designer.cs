@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace Restaurant_Silvana {
+namespace Restaurant_Silvana.DataSet {
     
     
     /// <summary>
@@ -20,17 +20,17 @@ namespace Restaurant_Silvana {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("silvanaDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DataSetHPembelian")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class silvanaDataSet : global::System.Data.DataSet {
+    public partial class DataSetHPembelian : global::System.Data.DataSet {
         
-        private makananDataTable tablemakanan;
+        private hpengeluaranDataTable tablehpengeluaran;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public silvanaDataSet() {
+        public DataSetHPembelian() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace Restaurant_Silvana {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected silvanaDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected DataSetHPembelian(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace Restaurant_Silvana {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["makanan"] != null)) {
-                    base.Tables.Add(new makananDataTable(ds.Tables["makanan"]));
+                if ((ds.Tables["hpengeluaran"] != null)) {
+                    base.Tables.Add(new hpengeluaranDataTable(ds.Tables["hpengeluaran"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace Restaurant_Silvana {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public makananDataTable makanan {
+        public hpengeluaranDataTable hpengeluaran {
             get {
-                return this.tablemakanan;
+                return this.tablehpengeluaran;
             }
         }
         
@@ -127,7 +127,7 @@ namespace Restaurant_Silvana {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            silvanaDataSet cln = ((silvanaDataSet)(base.Clone()));
+            DataSetHPembelian cln = ((DataSetHPembelian)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace Restaurant_Silvana {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["makanan"] != null)) {
-                    base.Tables.Add(new makananDataTable(ds.Tables["makanan"]));
+                if ((ds.Tables["hpengeluaran"] != null)) {
+                    base.Tables.Add(new hpengeluaranDataTable(ds.Tables["hpengeluaran"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace Restaurant_Silvana {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tablemakanan = ((makananDataTable)(base.Tables["makanan"]));
+            this.tablehpengeluaran = ((hpengeluaranDataTable)(base.Tables["hpengeluaran"]));
             if ((initTable == true)) {
-                if ((this.tablemakanan != null)) {
-                    this.tablemakanan.InitVars();
+                if ((this.tablehpengeluaran != null)) {
+                    this.tablehpengeluaran.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace Restaurant_Silvana {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "silvanaDataSet";
+            this.DataSetName = "DataSetHPembelian";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/silvanaDataSet.xsd";
+            this.Namespace = "http://tempuri.org/DataSetHPembelian.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tablemakanan = new makananDataTable();
-            base.Tables.Add(this.tablemakanan);
+            this.tablehpengeluaran = new hpengeluaranDataTable();
+            base.Tables.Add(this.tablehpengeluaran);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializemakanan() {
+        private bool ShouldSerializehpengeluaran() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace Restaurant_Silvana {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            silvanaDataSet ds = new silvanaDataSet();
+            DataSetHPembelian ds = new DataSetHPembelian();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,23 +270,29 @@ namespace Restaurant_Silvana {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void makananRowChangeEventHandler(object sender, makananRowChangeEvent e);
+        public delegate void hpengeluaranRowChangeEventHandler(object sender, hpengeluaranRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class makananDataTable : global::System.Data.TypedTableBase<makananRow> {
+        public partial class hpengeluaranDataTable : global::System.Data.TypedTableBase<hpengeluaranRow> {
             
-            private global::System.Data.DataColumn columnID_makanan;
+            private global::System.Data.DataColumn columnID_Pengeluaran;
             
-            private global::System.Data.DataColumn columnnama_makanan;
+            private global::System.Data.DataColumn columnTanggal_Pengeluaran;
+            
+            private global::System.Data.DataColumn columnGrand_Total_Pengeluaran;
+            
+            private global::System.Data.DataColumn columncreated_at;
+            
+            private global::System.Data.DataColumn columnupdated_at;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public makananDataTable() {
-                this.TableName = "makanan";
+            public hpengeluaranDataTable() {
+                this.TableName = "hpengeluaran";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -294,7 +300,7 @@ namespace Restaurant_Silvana {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal makananDataTable(global::System.Data.DataTable table) {
+            internal hpengeluaranDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -311,24 +317,48 @@ namespace Restaurant_Silvana {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected makananDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected hpengeluaranDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn ID_makananColumn {
+            public global::System.Data.DataColumn ID_PengeluaranColumn {
                 get {
-                    return this.columnID_makanan;
+                    return this.columnID_Pengeluaran;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn nama_makananColumn {
+            public global::System.Data.DataColumn Tanggal_PengeluaranColumn {
                 get {
-                    return this.columnnama_makanan;
+                    return this.columnTanggal_Pengeluaran;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Grand_Total_PengeluaranColumn {
+                get {
+                    return this.columnGrand_Total_Pengeluaran;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn created_atColumn {
+                get {
+                    return this.columncreated_at;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn updated_atColumn {
+                get {
+                    return this.columnupdated_at;
                 }
             }
             
@@ -343,53 +373,56 @@ namespace Restaurant_Silvana {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public makananRow this[int index] {
+            public hpengeluaranRow this[int index] {
                 get {
-                    return ((makananRow)(this.Rows[index]));
+                    return ((hpengeluaranRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event makananRowChangeEventHandler makananRowChanging;
+            public event hpengeluaranRowChangeEventHandler hpengeluaranRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event makananRowChangeEventHandler makananRowChanged;
+            public event hpengeluaranRowChangeEventHandler hpengeluaranRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event makananRowChangeEventHandler makananRowDeleting;
+            public event hpengeluaranRowChangeEventHandler hpengeluaranRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event makananRowChangeEventHandler makananRowDeleted;
+            public event hpengeluaranRowChangeEventHandler hpengeluaranRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddmakananRow(makananRow row) {
+            public void AddhpengeluaranRow(hpengeluaranRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public makananRow AddmakananRow(string nama_makanan) {
-                makananRow rowmakananRow = ((makananRow)(this.NewRow()));
+            public hpengeluaranRow AddhpengeluaranRow(System.DateTime Tanggal_Pengeluaran, int Grand_Total_Pengeluaran, System.DateTime created_at, System.DateTime updated_at) {
+                hpengeluaranRow rowhpengeluaranRow = ((hpengeluaranRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        nama_makanan};
-                rowmakananRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowmakananRow);
-                return rowmakananRow;
+                        Tanggal_Pengeluaran,
+                        Grand_Total_Pengeluaran,
+                        created_at,
+                        updated_at};
+                rowhpengeluaranRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowhpengeluaranRow);
+                return rowhpengeluaranRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public makananRow FindByID_makanan(int ID_makanan) {
-                return ((makananRow)(this.Rows.Find(new object[] {
-                            ID_makanan})));
+            public hpengeluaranRow FindByID_Pengeluaran(int ID_Pengeluaran) {
+                return ((hpengeluaranRow)(this.Rows.Find(new object[] {
+                            ID_Pengeluaran})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                makananDataTable cln = ((makananDataTable)(base.Clone()));
+                hpengeluaranDataTable cln = ((hpengeluaranDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -397,58 +430,68 @@ namespace Restaurant_Silvana {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new makananDataTable();
+                return new hpengeluaranDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnID_makanan = base.Columns["ID_makanan"];
-                this.columnnama_makanan = base.Columns["nama_makanan"];
+                this.columnID_Pengeluaran = base.Columns["ID_Pengeluaran"];
+                this.columnTanggal_Pengeluaran = base.Columns["Tanggal_Pengeluaran"];
+                this.columnGrand_Total_Pengeluaran = base.Columns["Grand_Total_Pengeluaran"];
+                this.columncreated_at = base.Columns["created_at"];
+                this.columnupdated_at = base.Columns["updated_at"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnID_makanan = new global::System.Data.DataColumn("ID_makanan", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID_makanan);
-                this.columnnama_makanan = new global::System.Data.DataColumn("nama_makanan", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnnama_makanan);
+                this.columnID_Pengeluaran = new global::System.Data.DataColumn("ID_Pengeluaran", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_Pengeluaran);
+                this.columnTanggal_Pengeluaran = new global::System.Data.DataColumn("Tanggal_Pengeluaran", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTanggal_Pengeluaran);
+                this.columnGrand_Total_Pengeluaran = new global::System.Data.DataColumn("Grand_Total_Pengeluaran", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGrand_Total_Pengeluaran);
+                this.columncreated_at = new global::System.Data.DataColumn("created_at", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncreated_at);
+                this.columnupdated_at = new global::System.Data.DataColumn("updated_at", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnupdated_at);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnID_makanan}, true));
-                this.columnID_makanan.AutoIncrement = true;
-                this.columnID_makanan.AutoIncrementSeed = -1;
-                this.columnID_makanan.AutoIncrementStep = -1;
-                this.columnID_makanan.AllowDBNull = false;
-                this.columnID_makanan.ReadOnly = true;
-                this.columnID_makanan.Unique = true;
-                this.columnnama_makanan.MaxLength = 50;
+                                this.columnID_Pengeluaran}, true));
+                this.columnID_Pengeluaran.AutoIncrement = true;
+                this.columnID_Pengeluaran.AutoIncrementSeed = -1;
+                this.columnID_Pengeluaran.AutoIncrementStep = -1;
+                this.columnID_Pengeluaran.AllowDBNull = false;
+                this.columnID_Pengeluaran.Unique = true;
+                this.columnTanggal_Pengeluaran.AllowDBNull = false;
+                this.columnGrand_Total_Pengeluaran.AllowDBNull = false;
+                this.columncreated_at.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public makananRow NewmakananRow() {
-                return ((makananRow)(this.NewRow()));
+            public hpengeluaranRow NewhpengeluaranRow() {
+                return ((hpengeluaranRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new makananRow(builder);
+                return new hpengeluaranRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(makananRow);
+                return typeof(hpengeluaranRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.makananRowChanged != null)) {
-                    this.makananRowChanged(this, new makananRowChangeEvent(((makananRow)(e.Row)), e.Action));
+                if ((this.hpengeluaranRowChanged != null)) {
+                    this.hpengeluaranRowChanged(this, new hpengeluaranRowChangeEvent(((hpengeluaranRow)(e.Row)), e.Action));
                 }
             }
             
@@ -456,8 +499,8 @@ namespace Restaurant_Silvana {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.makananRowChanging != null)) {
-                    this.makananRowChanging(this, new makananRowChangeEvent(((makananRow)(e.Row)), e.Action));
+                if ((this.hpengeluaranRowChanging != null)) {
+                    this.hpengeluaranRowChanging(this, new hpengeluaranRowChangeEvent(((hpengeluaranRow)(e.Row)), e.Action));
                 }
             }
             
@@ -465,8 +508,8 @@ namespace Restaurant_Silvana {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.makananRowDeleted != null)) {
-                    this.makananRowDeleted(this, new makananRowChangeEvent(((makananRow)(e.Row)), e.Action));
+                if ((this.hpengeluaranRowDeleted != null)) {
+                    this.hpengeluaranRowDeleted(this, new hpengeluaranRowChangeEvent(((hpengeluaranRow)(e.Row)), e.Action));
                 }
             }
             
@@ -474,14 +517,14 @@ namespace Restaurant_Silvana {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.makananRowDeleting != null)) {
-                    this.makananRowDeleting(this, new makananRowChangeEvent(((makananRow)(e.Row)), e.Action));
+                if ((this.hpengeluaranRowDeleting != null)) {
+                    this.hpengeluaranRowDeleting(this, new hpengeluaranRowChangeEvent(((hpengeluaranRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemovemakananRow(makananRow row) {
+            public void RemovehpengeluaranRow(hpengeluaranRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -490,7 +533,7 @@ namespace Restaurant_Silvana {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                silvanaDataSet ds = new silvanaDataSet();
+                DataSetHPembelian ds = new DataSetHPembelian();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -508,7 +551,7 @@ namespace Restaurant_Silvana {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "makananDataTable";
+                attribute2.FixedValue = "hpengeluaranDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -552,54 +595,87 @@ namespace Restaurant_Silvana {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class makananRow : global::System.Data.DataRow {
+        public partial class hpengeluaranRow : global::System.Data.DataRow {
             
-            private makananDataTable tablemakanan;
+            private hpengeluaranDataTable tablehpengeluaran;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal makananRow(global::System.Data.DataRowBuilder rb) : 
+            internal hpengeluaranRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablemakanan = ((makananDataTable)(this.Table));
+                this.tablehpengeluaran = ((hpengeluaranDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int ID_makanan {
+            public int ID_Pengeluaran {
                 get {
-                    return ((int)(this[this.tablemakanan.ID_makananColumn]));
+                    return ((int)(this[this.tablehpengeluaran.ID_PengeluaranColumn]));
                 }
                 set {
-                    this[this.tablemakanan.ID_makananColumn] = value;
+                    this[this.tablehpengeluaran.ID_PengeluaranColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string nama_makanan {
+            public System.DateTime Tanggal_Pengeluaran {
+                get {
+                    return ((global::System.DateTime)(this[this.tablehpengeluaran.Tanggal_PengeluaranColumn]));
+                }
+                set {
+                    this[this.tablehpengeluaran.Tanggal_PengeluaranColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Grand_Total_Pengeluaran {
+                get {
+                    return ((int)(this[this.tablehpengeluaran.Grand_Total_PengeluaranColumn]));
+                }
+                set {
+                    this[this.tablehpengeluaran.Grand_Total_PengeluaranColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime created_at {
+                get {
+                    return ((global::System.DateTime)(this[this.tablehpengeluaran.created_atColumn]));
+                }
+                set {
+                    this[this.tablehpengeluaran.created_atColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime updated_at {
                 get {
                     try {
-                        return ((string)(this[this.tablemakanan.nama_makananColumn]));
+                        return ((global::System.DateTime)(this[this.tablehpengeluaran.updated_atColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'nama_makanan\' in table \'makanan\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'updated_at\' in table \'hpengeluaran\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablemakanan.nama_makananColumn] = value;
+                    this[this.tablehpengeluaran.updated_atColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isnama_makananNull() {
-                return this.IsNull(this.tablemakanan.nama_makananColumn);
+            public bool Isupdated_atNull() {
+                return this.IsNull(this.tablehpengeluaran.updated_atColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setnama_makananNull() {
-                this[this.tablemakanan.nama_makananColumn] = global::System.Convert.DBNull;
+            public void Setupdated_atNull() {
+                this[this.tablehpengeluaran.updated_atColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -607,22 +683,22 @@ namespace Restaurant_Silvana {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class makananRowChangeEvent : global::System.EventArgs {
+        public class hpengeluaranRowChangeEvent : global::System.EventArgs {
             
-            private makananRow eventRow;
+            private hpengeluaranRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public makananRowChangeEvent(makananRow row, global::System.Data.DataRowAction action) {
+            public hpengeluaranRowChangeEvent(hpengeluaranRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public makananRow Row {
+            public hpengeluaranRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -638,7 +714,7 @@ namespace Restaurant_Silvana {
         }
     }
 }
-namespace Restaurant_Silvana.silvanaDataSetTableAdapters {
+namespace Restaurant_Silvana.DataSet.DataSetHPembelianTableAdapters {
     
     
     /// <summary>
@@ -650,27 +726,27 @@ namespace Restaurant_Silvana.silvanaDataSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class makananTableAdapter : global::System.ComponentModel.Component {
+    public partial class hpengeluaranTableAdapter : global::System.ComponentModel.Component {
         
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        private global::MySql.Data.MySqlClient.MySqlDataAdapter _adapter;
         
-        private global::System.Data.SqlClient.SqlConnection _connection;
+        private global::MySql.Data.MySqlClient.MySqlConnection _connection;
         
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        private global::MySql.Data.MySqlClient.MySqlTransaction _transaction;
         
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        private global::MySql.Data.MySqlClient.MySqlCommand[] _commandCollection;
         
         private bool _clearBeforeFill;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public makananTableAdapter() {
+        public hpengeluaranTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+        protected internal global::MySql.Data.MySqlClient.MySqlDataAdapter Adapter {
             get {
                 if ((this._adapter == null)) {
                     this.InitAdapter();
@@ -681,7 +757,7 @@ namespace Restaurant_Silvana.silvanaDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
+        internal global::MySql.Data.MySqlClient.MySqlConnection Connection {
             get {
                 if ((this._connection == null)) {
                     this.InitConnection();
@@ -701,7 +777,7 @@ namespace Restaurant_Silvana.silvanaDataSetTableAdapters {
                 }
                 for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
                     if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                        ((global::MySql.Data.MySqlClient.MySqlCommand)(this.CommandCollection[i])).Connection = value;
                     }
                 }
             }
@@ -709,7 +785,7 @@ namespace Restaurant_Silvana.silvanaDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+        internal global::MySql.Data.MySqlClient.MySqlTransaction Transaction {
             get {
                 return this._transaction;
             }
@@ -735,7 +811,7 @@ namespace Restaurant_Silvana.silvanaDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+        protected global::MySql.Data.MySqlClient.MySqlCommand[] CommandCollection {
             get {
                 if ((this._commandCollection == null)) {
                     this.InitCommandCollection();
@@ -758,54 +834,210 @@ namespace Restaurant_Silvana.silvanaDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            this._adapter = new global::MySql.Data.MySqlClient.MySqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "makanan";
-            tableMapping.ColumnMappings.Add("ID_makanan", "ID_makanan");
-            tableMapping.ColumnMappings.Add("nama_makanan", "nama_makanan");
+            tableMapping.DataSetTable = "hpengeluaran";
+            tableMapping.ColumnMappings.Add("ID_Pengeluaran", "ID_Pengeluaran");
+            tableMapping.ColumnMappings.Add("Tanggal_Pengeluaran", "Tanggal_Pengeluaran");
+            tableMapping.ColumnMappings.Add("Grand_Total_Pengeluaran", "Grand_Total_Pengeluaran");
+            tableMapping.ColumnMappings.Add("created_at", "created_at");
+            tableMapping.ColumnMappings.Add("updated_at", "updated_at");
             this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[makanan] WHERE (([ID_makanan] = @Original_ID_makanan) AND ((@I" +
-                "sNull_nama_makanan = 1 AND [nama_makanan] IS NULL) OR ([nama_makanan] = @Origina" +
-                "l_nama_makanan)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM `hpengeluaran` WHERE ((`ID_Pengeluaran` = @p1) AND (`Tanggal_Pengelua" +
+                "ran` = @p2) AND (`Grand_Total_Pengeluaran` = @p3) AND (`created_at` = @p4) AND (" +
+                "(@p5 = 1 AND `updated_at` IS NULL) OR (`updated_at` = @p6)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_makanan", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_makanan", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_nama_makanan", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nama_makanan", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nama_makanan", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nama_makanan", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p1";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "ID_Pengeluaran";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p2";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
+            param.IsNullable = true;
+            param.SourceColumn = "Tanggal_Pengeluaran";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p3";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "Grand_Total_Pengeluaran";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p4";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Timestamp;
+            param.IsNullable = true;
+            param.SourceColumn = "created_at";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p5";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "updated_at";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p6";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
+            param.IsNullable = true;
+            param.SourceColumn = "updated_at";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[makanan] ([nama_makanan]) VALUES (@nama_makanan);\r\nSELECT ID_m" +
-                "akanan, nama_makanan FROM makanan WHERE (ID_makanan = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `hpengeluaran` (`Tanggal_Pengeluaran`, `Grand_Total_Pengeluaran`, `cr" +
+                "eated_at`, `updated_at`) VALUES (@p1, @p2, @p3, @p4)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nama_makanan", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nama_makanan", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p1";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
+            param.IsNullable = true;
+            param.SourceColumn = "Tanggal_Pengeluaran";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p2";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "Grand_Total_Pengeluaran";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p3";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Timestamp;
+            param.IsNullable = true;
+            param.SourceColumn = "created_at";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p4";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
+            param.IsNullable = true;
+            param.SourceColumn = "updated_at";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._adapter.InsertCommand.Parameters.Add(param);
+            this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[makanan] SET [nama_makanan] = @nama_makanan WHERE (([ID_makanan] = @Original_ID_makanan) AND ((@IsNull_nama_makanan = 1 AND [nama_makanan] IS NULL) OR ([nama_makanan] = @Original_nama_makanan)));
-SELECT ID_makanan, nama_makanan FROM makanan WHERE (ID_makanan = @ID_makanan)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `hpengeluaran` SET `Tanggal_Pengeluaran` = @p1, `Grand_Total_Pengeluaran` = @p2, `created_at` = @p3, `updated_at` = @p4 WHERE ((`ID_Pengeluaran` = @p5) AND (`Tanggal_Pengeluaran` = @p6) AND (`Grand_Total_Pengeluaran` = @p7) AND (`created_at` = @p8) AND ((@p9 = 1 AND `updated_at` IS NULL) OR (`updated_at` = @p10)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nama_makanan", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nama_makanan", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_makanan", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_makanan", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_nama_makanan", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nama_makanan", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nama_makanan", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nama_makanan", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_makanan", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_makanan", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p1";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
+            param.IsNullable = true;
+            param.SourceColumn = "Tanggal_Pengeluaran";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p2";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "Grand_Total_Pengeluaran";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p3";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Timestamp;
+            param.IsNullable = true;
+            param.SourceColumn = "created_at";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p4";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
+            param.IsNullable = true;
+            param.SourceColumn = "updated_at";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p5";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "ID_Pengeluaran";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p6";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
+            param.IsNullable = true;
+            param.SourceColumn = "Tanggal_Pengeluaran";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p7";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "Grand_Total_Pengeluaran";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p8";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Timestamp;
+            param.IsNullable = true;
+            param.SourceColumn = "created_at";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p9";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "updated_at";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p10";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
+            param.IsNullable = true;
+            param.SourceColumn = "updated_at";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Restaurant_Silvana.Properties.Settings.Default.silvanaConnectionString;
+            this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
+            this._connection.ConnectionString = global::Restaurant_Silvana.Properties.Settings.Default.silvanaConnectionString2;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
+            this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID_makanan, nama_makanan FROM dbo.makanan";
+            this._commandCollection[0].CommandText = "SELECT `ID_Pengeluaran`, `Tanggal_Pengeluaran`, `Grand_Total_Pengeluaran`, `creat" +
+                "ed_at`, `updated_at` FROM `hpengeluaran`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -813,7 +1045,7 @@ SELECT ID_makanan, nama_makanan FROM makanan WHERE (ID_makanan = @ID_makanan)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(silvanaDataSet.makananDataTable dataTable) {
+        public virtual int Fill(DataSetHPembelian.hpengeluaranDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -826,9 +1058,9 @@ SELECT ID_makanan, nama_makanan FROM makanan WHERE (ID_makanan = @ID_makanan)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual silvanaDataSet.makananDataTable GetData() {
+        public virtual DataSetHPembelian.hpengeluaranDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            silvanaDataSet.makananDataTable dataTable = new silvanaDataSet.makananDataTable();
+            DataSetHPembelian.hpengeluaranDataTable dataTable = new DataSetHPembelian.hpengeluaranDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -836,15 +1068,15 @@ SELECT ID_makanan, nama_makanan FROM makanan WHERE (ID_makanan = @ID_makanan)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(silvanaDataSet.makananDataTable dataTable) {
+        public virtual int Update(DataSetHPembelian.hpengeluaranDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(silvanaDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "makanan");
+        public virtual int Update(DataSetHPembelian dataSet) {
+            return this.Adapter.Update(dataSet, "hpengeluaran");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -866,15 +1098,18 @@ SELECT ID_makanan, nama_makanan FROM makanan WHERE (ID_makanan = @ID_makanan)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID_makanan, string Original_nama_makanan) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID_makanan));
-            if ((Original_nama_makanan == null)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+        public virtual int Delete(int p1, System.DateTime p2, int p3, System.DateTime p4, global::System.Nullable<global::System.DateTime> p6) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(p1));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((System.DateTime)(p2));
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(p3));
+            this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(p4));
+            if ((p6.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((System.DateTime)(p6.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_nama_makanan));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -896,12 +1131,15 @@ SELECT ID_makanan, nama_makanan FROM makanan WHERE (ID_makanan = @ID_makanan)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string nama_makanan) {
-            if ((nama_makanan == null)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+        public virtual int Insert(System.DateTime p1, int p2, System.DateTime p3, global::System.Nullable<global::System.DateTime> p4) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((System.DateTime)(p1));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(p2));
+            this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(p3));
+            if ((p4.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(p4.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(nama_makanan));
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -923,23 +1161,28 @@ SELECT ID_makanan, nama_makanan FROM makanan WHERE (ID_makanan = @ID_makanan)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string nama_makanan, int Original_ID_makanan, string Original_nama_makanan, int ID_makanan) {
-            if ((nama_makanan == null)) {
-                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+        public virtual int Update(System.DateTime p1, int p2, System.DateTime p3, global::System.Nullable<global::System.DateTime> p4, int p5, System.DateTime p6, int p7, System.DateTime p8, global::System.Nullable<global::System.DateTime> p10) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((System.DateTime)(p1));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(p2));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(p3));
+            if ((p4.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(p4.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(nama_makanan));
-            }
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Original_ID_makanan));
-            if ((Original_nama_makanan == null)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_nama_makanan));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(p5));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(p6));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(p7));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(p8));
+            if ((p10.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(p10.Value));
             }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(ID_makanan));
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -955,14 +1198,6 @@ SELECT ID_makanan, nama_makanan FROM makanan WHERE (ID_makanan = @ID_makanan)";
                 }
             }
         }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string nama_makanan, int Original_ID_makanan, string Original_nama_makanan) {
-            return this.Update(nama_makanan, Original_ID_makanan, Original_nama_makanan, Original_ID_makanan);
-        }
     }
     
     /// <summary>
@@ -977,7 +1212,7 @@ SELECT ID_makanan, nama_makanan FROM makanan WHERE (ID_makanan = @ID_makanan)";
         
         private UpdateOrderOption _updateOrder;
         
-        private makananTableAdapter _makananTableAdapter;
+        private hpengeluaranTableAdapter _hpengeluaranTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -999,12 +1234,12 @@ SELECT ID_makanan, nama_makanan FROM makanan WHERE (ID_makanan = @ID_makanan)";
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public makananTableAdapter makananTableAdapter {
+        public hpengeluaranTableAdapter hpengeluaranTableAdapter {
             get {
-                return this._makananTableAdapter;
+                return this._hpengeluaranTableAdapter;
             }
             set {
-                this._makananTableAdapter = value;
+                this._hpengeluaranTableAdapter = value;
             }
         }
         
@@ -1027,9 +1262,9 @@ SELECT ID_makanan, nama_makanan FROM makanan WHERE (ID_makanan = @ID_makanan)";
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._makananTableAdapter != null) 
-                            && (this._makananTableAdapter.Connection != null))) {
-                    return this._makananTableAdapter.Connection;
+                if (((this._hpengeluaranTableAdapter != null) 
+                            && (this._hpengeluaranTableAdapter.Connection != null))) {
+                    return this._hpengeluaranTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1044,7 +1279,7 @@ SELECT ID_makanan, nama_makanan FROM makanan WHERE (ID_makanan = @ID_makanan)";
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._makananTableAdapter != null)) {
+                if ((this._hpengeluaranTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1056,14 +1291,14 @@ SELECT ID_makanan, nama_makanan FROM makanan WHERE (ID_makanan = @ID_makanan)";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateUpdatedRows(silvanaDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(DataSetHPembelian dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._makananTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.makanan.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._hpengeluaranTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.hpengeluaran.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._makananTableAdapter.Update(updatedRows));
+                    result = (result + this._hpengeluaranTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1075,13 +1310,13 @@ SELECT ID_makanan, nama_makanan FROM makanan WHERE (ID_makanan = @ID_makanan)";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateInsertedRows(silvanaDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(DataSetHPembelian dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._makananTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.makanan.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._hpengeluaranTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.hpengeluaran.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._makananTableAdapter.Update(addedRows));
+                    result = (result + this._hpengeluaranTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1093,13 +1328,13 @@ SELECT ID_makanan, nama_makanan FROM makanan WHERE (ID_makanan = @ID_makanan)";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateDeletedRows(silvanaDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(DataSetHPembelian dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._makananTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.makanan.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._hpengeluaranTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.hpengeluaran.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._makananTableAdapter.Update(deletedRows));
+                    result = (result + this._hpengeluaranTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1135,15 +1370,15 @@ SELECT ID_makanan, nama_makanan FROM makanan WHERE (ID_makanan = @ID_makanan)";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public virtual int UpdateAll(silvanaDataSet dataSet) {
+        public virtual int UpdateAll(DataSetHPembelian dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._makananTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._makananTableAdapter.Connection) == false))) {
+            if (((this._hpengeluaranTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._hpengeluaranTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -1179,13 +1414,13 @@ SELECT ID_makanan, nama_makanan FROM makanan WHERE (ID_makanan = @ID_makanan)";
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._makananTableAdapter != null)) {
-                    revertConnections.Add(this._makananTableAdapter, this._makananTableAdapter.Connection);
-                    this._makananTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._makananTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._makananTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._makananTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._makananTableAdapter.Adapter);
+                if ((this._hpengeluaranTableAdapter != null)) {
+                    revertConnections.Add(this._hpengeluaranTableAdapter, this._hpengeluaranTableAdapter.Connection);
+                    this._hpengeluaranTableAdapter.Connection = ((global::MySql.Data.MySqlClient.MySqlConnection)(workConnection));
+                    this._hpengeluaranTableAdapter.Transaction = ((global::MySql.Data.MySqlClient.MySqlTransaction)(workTransaction));
+                    if (this._hpengeluaranTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._hpengeluaranTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._hpengeluaranTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1246,9 +1481,9 @@ SELECT ID_makanan, nama_makanan FROM makanan WHERE (ID_makanan = @ID_makanan)";
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._makananTableAdapter != null)) {
-                    this._makananTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._makananTableAdapter]));
-                    this._makananTableAdapter.Transaction = null;
+                if ((this._hpengeluaranTableAdapter != null)) {
+                    this._hpengeluaranTableAdapter.Connection = ((global::MySql.Data.MySqlClient.MySqlConnection)(revertConnections[this._hpengeluaranTableAdapter]));
+                    this._hpengeluaranTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
