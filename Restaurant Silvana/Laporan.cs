@@ -291,7 +291,8 @@ namespace Restaurant_Silvana
                         reportViewer1.LocalReport.SetParameters(ParameterTanggal);
                     }
 
-                    
+                    MessageBox.Show("Test");
+                    MessageBox.Show("Halo halo bandungggg");
                 }
             }
 
