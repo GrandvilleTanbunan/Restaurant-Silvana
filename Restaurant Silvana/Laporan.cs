@@ -76,9 +76,6 @@ namespace Restaurant_Silvana
             };
 
 
-            MessageBox.Show(dari);
-            MessageBox.Show(sampai);
-
             if (periode == 4) // tahun saja
             {
                 tahun = DTP_TahunSaja.Text;
