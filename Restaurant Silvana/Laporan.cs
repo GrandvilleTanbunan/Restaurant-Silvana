@@ -42,7 +42,7 @@ namespace Restaurant_Silvana
         
         private void Btn_Load_Click(object sender, EventArgs e)
         {
-            if (pilihReport == 0 || pilihReport == 1) // penjualan
+            if (pilihReport == 0 || pilihReport == 1 || pilihReport == 2) // penjualan
             {
                 executeDatabase(CB_Periode.SelectedIndex);
             }
@@ -52,16 +52,6 @@ namespace Restaurant_Silvana
             //    reportViewer1.LocalReport.DataSources.Clear();
             //    reportViewer1.RefreshReport();
             //}
-            MessageBox.Show("Test");
-            MessageBox.Show("Test");
-            MessageBox.Show("Test");
-            MessageBox.Show("Test");
-            MessageBox.Show("Test");
-            MessageBox.Show("Test");
-            MessageBox.Show("Test");
-            MessageBox.Show("Test");
-
-
 
         }
 
@@ -150,6 +140,7 @@ namespace Restaurant_Silvana
                     }
                     else if(pilihReport == 1)
                     {
+                        
                         DataTable dt = objDAL.ReadHPengeluaranWithCondition(CB_Periode.SelectedIndex, tanggal, bulan, dari, sampai, tahun);
 
                         ReportDataSource rds = new ReportDataSource("DataSetHPembelian", dt);
@@ -160,6 +151,24 @@ namespace Restaurant_Silvana
                         reportViewer1.LocalReport.DisplayName = "Laporan Pembelian " + tanggal;
                         reportViewer1.LocalReport.SetParameters(rParams);
                         reportViewer1.LocalReport.SetParameters(ParameterTanggal);
+                    }
+
+                    else if(pilihReport == 2)
+                    {
+                        DataTable dt = objDAL.ReadSumHPengeluaran(CB_Periode.SelectedIndex, tanggal, bulan, dari, sampai, tahun);
+                        DataTable dt2 = objDAL.ReadSumHtrans(CB_Periode.SelectedIndex, tanggal, bulan, dari, sampai, tahun);
+
+                        ReportDataSource rds = new ReportDataSource("DataSetHPembelian", dt);
+                        ReportDataSource rds2 = new ReportDataSource("DataSetHtrans", dt2);
+
+                        reportViewer1.LocalReport.ReportPath = "LaporanPenjualandanPembelian.rdlc";
+                        reportViewer1.LocalReport.DataSources.Clear();
+                        reportViewer1.LocalReport.DataSources.Add(rds);
+                        reportViewer1.LocalReport.DataSources.Add(rds2);
+                        tanggal = theDate.ToString("dd-MM-yyyy");
+                        reportViewer1.LocalReport.DisplayName = "Laporan Pembelian " + tanggal;
+                        //reportViewer1.LocalReport.SetParameters(rParams);
+                        //reportViewer1.LocalReport.SetParameters(ParameterTanggal);
                     }
                     
 
@@ -357,14 +366,27 @@ namespace Restaurant_Silvana
             pilihReport = 2; //Rangkuman penjualan+pembelian
         }
 
-        private void RB_Makanan_CheckedChanged(object sender, EventArgs e)
+        private void RB_RangkumanBerdasarkanPesanan_CheckedChanged(object sender, EventArgs e)
         {
-            pilihReport = 3; //makanan
+            pilihReport = 3; //Detail Penjualan
+
         }
+
+        private void RB_DetailPenjualan_CheckedChanged(object sender, EventArgs e)
+        {
+            pilihReport = 4; //Detail Penjualan
+        }
+
+        private void RB_DetailPembelian_CheckedChanged(object sender, EventArgs e)
+        {
+            pilihReport = 5; //Detail pembelian
+        }
+
 
         private void GroupBox1_Enter(object sender, EventArgs e)
         {
 
         }
+
     }
 }

@@ -34,6 +34,7 @@
             this.DTP_TahunSaja = new System.Windows.Forms.DateTimePicker();
             this.CB_Periode = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.RB_DetailPembelian = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
             this.DTP_SampaiReport = new System.Windows.Forms.DateTimePicker();
             this.RB_DetailPenjualan = new System.Windows.Forms.RadioButton();
@@ -41,7 +42,7 @@
             this.RB_Pembelian = new System.Windows.Forms.RadioButton();
             this.RB_Penjualan = new System.Windows.Forms.RadioButton();
             this.DTP_DariReport = new System.Windows.Forms.DateTimePicker();
-            this.RB_DetailPembelian = new System.Windows.Forms.RadioButton();
+            this.RB_RangkumanBerdasarkanPesanan = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -109,6 +110,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.RB_RangkumanBerdasarkanPesanan);
             this.groupBox1.Controls.Add(this.RB_DetailPembelian);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.DTP_SampaiReport);
@@ -131,6 +133,18 @@
             this.groupBox1.Text = "Pilih Laporan";
             this.groupBox1.Enter += new System.EventHandler(this.GroupBox1_Enter);
             // 
+            // RB_DetailPembelian
+            // 
+            this.RB_DetailPembelian.AutoSize = true;
+            this.RB_DetailPembelian.Location = new System.Drawing.Point(11, 193);
+            this.RB_DetailPembelian.Name = "RB_DetailPembelian";
+            this.RB_DetailPembelian.Size = new System.Drawing.Size(147, 25);
+            this.RB_DetailPembelian.TabIndex = 20;
+            this.RB_DetailPembelian.TabStop = true;
+            this.RB_DetailPembelian.Text = "Detail Pembelian";
+            this.RB_DetailPembelian.UseVisualStyleBackColor = true;
+            this.RB_DetailPembelian.CheckedChanged += new System.EventHandler(this.RB_DetailPembelian_CheckedChanged);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -151,19 +165,19 @@
             // RB_DetailPenjualan
             // 
             this.RB_DetailPenjualan.AutoSize = true;
-            this.RB_DetailPenjualan.Location = new System.Drawing.Point(11, 137);
+            this.RB_DetailPenjualan.Location = new System.Drawing.Point(11, 164);
             this.RB_DetailPenjualan.Name = "RB_DetailPenjualan";
             this.RB_DetailPenjualan.Size = new System.Drawing.Size(143, 25);
             this.RB_DetailPenjualan.TabIndex = 16;
             this.RB_DetailPenjualan.TabStop = true;
             this.RB_DetailPenjualan.Text = "Detail Penjualan";
             this.RB_DetailPenjualan.UseVisualStyleBackColor = true;
-            this.RB_DetailPenjualan.CheckedChanged += new System.EventHandler(this.RB_Makanan_CheckedChanged);
+            this.RB_DetailPenjualan.CheckedChanged += new System.EventHandler(this.RB_DetailPenjualan_CheckedChanged);
             // 
             // RB_PenjualanPembelian
             // 
             this.RB_PenjualanPembelian.AutoSize = true;
-            this.RB_PenjualanPembelian.Location = new System.Drawing.Point(11, 88);
+            this.RB_PenjualanPembelian.Location = new System.Drawing.Point(11, 87);
             this.RB_PenjualanPembelian.Name = "RB_PenjualanPembelian";
             this.RB_PenjualanPembelian.Size = new System.Drawing.Size(299, 25);
             this.RB_PenjualanPembelian.TabIndex = 15;
@@ -204,16 +218,17 @@
             this.DTP_DariReport.Size = new System.Drawing.Size(122, 26);
             this.DTP_DariReport.TabIndex = 17;
             // 
-            // RB_DetailPembelian
+            // RB_RangkumanBerdasarkanPesanan
             // 
-            this.RB_DetailPembelian.AutoSize = true;
-            this.RB_DetailPembelian.Location = new System.Drawing.Point(11, 168);
-            this.RB_DetailPembelian.Name = "RB_DetailPembelian";
-            this.RB_DetailPembelian.Size = new System.Drawing.Size(147, 25);
-            this.RB_DetailPembelian.TabIndex = 20;
-            this.RB_DetailPembelian.TabStop = true;
-            this.RB_DetailPembelian.Text = "Detail Pembelian";
-            this.RB_DetailPembelian.UseVisualStyleBackColor = true;
+            this.RB_RangkumanBerdasarkanPesanan.AutoSize = true;
+            this.RB_RangkumanBerdasarkanPesanan.Location = new System.Drawing.Point(11, 116);
+            this.RB_RangkumanBerdasarkanPesanan.Name = "RB_RangkumanBerdasarkanPesanan";
+            this.RB_RangkumanBerdasarkanPesanan.Size = new System.Drawing.Size(272, 25);
+            this.RB_RangkumanBerdasarkanPesanan.TabIndex = 21;
+            this.RB_RangkumanBerdasarkanPesanan.TabStop = true;
+            this.RB_RangkumanBerdasarkanPesanan.Text = "Rangkuman Berdasarkan Pesanan";
+            this.RB_RangkumanBerdasarkanPesanan.UseVisualStyleBackColor = true;
+            this.RB_RangkumanBerdasarkanPesanan.CheckedChanged += new System.EventHandler(this.RB_RangkumanBerdasarkanPesanan_CheckedChanged);
             // 
             // Laporan
             // 
@@ -250,5 +265,6 @@
         private System.Windows.Forms.DateTimePicker DTP_SampaiReport;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.RadioButton RB_DetailPembelian;
+        private System.Windows.Forms.RadioButton RB_RangkumanBerdasarkanPesanan;
     }
 }
