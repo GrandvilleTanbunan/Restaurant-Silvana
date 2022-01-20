@@ -76,8 +76,8 @@ namespace Restaurant_Silvana
             };
 
 
-            //MessageBox.Show(dari);
-            //MessageBox.Show(sampai);
+            MessageBox.Show(dari);
+            MessageBox.Show(sampai);
 
             if (periode == 4) // tahun saja
             {
