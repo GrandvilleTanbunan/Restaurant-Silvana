@@ -871,22 +871,22 @@ namespace Restaurant_Silvana.DAL
 
             if (periode == 0) //hari ini
             {
-                query = "SELECT d.Nama_Makanan, SUM(d.Quantity) AS Quantity FROM Dtrans d, Htrans h WHERE h.InvoiceDate BETWEEN @tanggal1 and @tanggal2 AND h.InvoiceID = d.InvoiceID AND h.MejaAktif = 0 GROUP BY d.Nama_Makanan ORDER BY h.InvoiceDate ASC; ";
+                query = "SELECT d.Nama_Makanan, SUM(d.Quantity) AS Quantity FROM Dtrans d, Htrans h WHERE h.InvoiceDate BETWEEN @tanggal1 and @tanggal2 AND h.InvoiceID = d.InvoiceID AND h.MejaAktif = 0 GROUP BY d.Nama_Makanan ORDER BY d.Nama_Makanan ASC; ";
             }
 
             else if (periode == 1) // bulan ini
             {
-                query = "SELECT d.Nama_Makanan, SUM(d.Quantity) AS Quantity FROM Dtrans d, Htrans h WHERE MONTH(InvoiceDate) = @bulan AND YEAR(invoiceDate) = @tahun AND h.InvoiceID = d.InvoiceID AND h.MejaAktif = 0 GROUP BY d.Nama_Makanan ORDER BY h.InvoiceDate ASC; ";
+                query = "SELECT d.Nama_Makanan, SUM(d.Quantity) AS Quantity FROM Dtrans d, Htrans h WHERE MONTH(InvoiceDate) = @bulan AND YEAR(invoiceDate) = @tahun AND h.InvoiceID = d.InvoiceID AND h.MejaAktif = 0 GROUP BY d.Nama_Makanan ORDER BY d.Nama_Makanan ASC; ";
             }
 
             else if (periode == 2 || periode == 4) // tahun ini & pilih Tahun
             {
-                query = "SELECT d.Nama_Makanan, SUM(d.Quantity) AS Quantity FROM Dtrans d, Htrans h WHERE YEAR(invoiceDate) = @tahun AND h.InvoiceID = d.InvoiceID AND h.MejaAktif = 0 GROUP BY d.Nama_Makanan ORDER BY h.InvoiceDate ASC; ";
+                query = "SELECT d.Nama_Makanan, SUM(d.Quantity) AS Quantity FROM Dtrans d, Htrans h WHERE YEAR(invoiceDate) = @tahun AND h.InvoiceID = d.InvoiceID AND h.MejaAktif = 0 GROUP BY d.Nama_Makanan ORDER BY d.Nama_Makanan ASC; ";
             }
 
             else if (periode == 3) //pilih tanggal
             {
-                query = "SELECT d.Nama_Makanan, SUM(d.Quantity) AS Quantity FROM Dtrans d, Htrans h WHERE h.InvoiceDate BETWEEN @dari AND @sampai AND h.InvoiceID = d.InvoiceID AND h.MejaAktif = 0 GROUP BY d.Nama_Makanan ORDER BY h.InvoiceDate ASC; ";
+                query = "SELECT d.Nama_Makanan, SUM(d.Quantity) AS Quantity FROM Dtrans d, Htrans h WHERE h.InvoiceDate BETWEEN @dari AND @sampai AND h.InvoiceID = d.InvoiceID AND h.MejaAktif = 0 GROUP BY d.Nama_Makanan ORDER BY d.Nama_Makanan ASC; ";
             }
 
             MySqlCommand cmd = new MySqlCommand(query, con.connect);
