@@ -42,16 +42,9 @@ namespace Restaurant_Silvana
         
         private void Btn_Load_Click(object sender, EventArgs e)
         {
-            if (pilihReport == 0 || pilihReport == 1 || pilihReport == 2) // penjualan
-            {
-                executeDatabase(CB_Periode.SelectedIndex);
-            }
-            //else if(pilihReport == 1) // pembelian
-            //{
-
-            //    reportViewer1.LocalReport.DataSources.Clear();
-            //    reportViewer1.RefreshReport();
-            //}
+            
+            executeDatabase(CB_Periode.SelectedIndex);
+            
 
         }
 
@@ -80,10 +73,10 @@ namespace Restaurant_Silvana
             {
                 tahun = DTP_TahunSaja.Text;
                 Microsoft.Reporting.WinForms.ReportParameter[] rParams = new Microsoft.Reporting.WinForms.ReportParameter[]
-                    {
-                        new Microsoft.Reporting.WinForms.ReportParameter("Periode", tahun),
-                        new Microsoft.Reporting.WinForms.ReportParameter("ColumnVisible", "False")
-                    };
+                {
+                    new Microsoft.Reporting.WinForms.ReportParameter("Periode", tahun),
+                    new Microsoft.Reporting.WinForms.ReportParameter("ColumnVisible", "False")
+                };
 
                 if(pilihReport == 0)
                 {
@@ -109,7 +102,72 @@ namespace Restaurant_Silvana
                     reportViewer1.LocalReport.SetParameters(rParams);
                     reportViewer1.LocalReport.SetParameters(ParameterTanggal);
                 }
-               
+
+                else if (pilihReport == 2)
+                {
+                    DataTable dt = objDAL.ReadSumHtransHpengeluaran(CB_Periode.SelectedIndex, tanggal, bulan, dari, sampai, tahun);
+
+                    ReportDataSource rds = new ReportDataSource("DataSetHPembelian", dt);
+                    ReportDataSource rds2 = new ReportDataSource("DataSetHtrans", dt);
+
+                    reportViewer1.LocalReport.ReportPath = "LaporanPenjualandanPembelianTahun.rdlc";
+                    reportViewer1.LocalReport.DataSources.Clear();
+                    reportViewer1.LocalReport.DataSources.Add(rds);
+                    reportViewer1.LocalReport.DataSources.Add(rds2);
+
+                    reportViewer1.LocalReport.DisplayName = "Laporan Penjualan dan Pembelian Tahun " + tahun;
+                    reportViewer1.LocalReport.SetParameters(rParams);
+                    reportViewer1.LocalReport.SetParameters(ParameterTanggal);
+                }
+
+                else if (pilihReport == 3)
+                {
+                    DataTable dt = objDAL.ReadSumMakananYangTerjual(CB_Periode.SelectedIndex, tanggal, bulan, dari, sampai, tahun);
+                    ReportDataSource rds = new ReportDataSource("DataSetDtrans", dt);
+                    ReportDataSource rds2 = new ReportDataSource("DataSetHtrans", dt);
+
+                    reportViewer1.LocalReport.ReportPath = "LaporanMakananYangDipesan.rdlc";
+                    reportViewer1.LocalReport.DataSources.Clear();
+                    reportViewer1.LocalReport.DataSources.Add(rds);
+                    reportViewer1.LocalReport.DataSources.Add(rds2);
+
+                    reportViewer1.LocalReport.DisplayName = "Laporan Makanan yang Terjual Tahun " + tahun;
+                    reportViewer1.LocalReport.SetParameters(rParams);
+                    reportViewer1.LocalReport.SetParameters(ParameterTanggal);
+                }
+
+                else if (pilihReport == 4)
+                {
+                    DataTable dt = objDAL.ReadDtransWithCondition(CB_Periode.SelectedIndex, tanggal, bulan, dari, sampai, tahun);
+                    ReportDataSource rds = new ReportDataSource("DataSetDtrans", dt);
+                    ReportDataSource rds2 = new ReportDataSource("DataSetHtrans", dt);
+
+                    reportViewer1.LocalReport.ReportPath = "LaporanPenjualanDetail.rdlc";
+                    reportViewer1.LocalReport.DataSources.Clear();
+                    reportViewer1.LocalReport.DataSources.Add(rds);
+                    reportViewer1.LocalReport.DataSources.Add(rds2);
+
+                    reportViewer1.LocalReport.DisplayName = "Laporan Penjualan Detail Tahun " + tahun;
+                    reportViewer1.LocalReport.SetParameters(rParams);
+                    reportViewer1.LocalReport.SetParameters(ParameterTanggal);
+                }
+
+                else if (pilihReport == 5)
+                {
+                    DataTable dt = objDAL.ReadDPengeluaranWithCondition(CB_Periode.SelectedIndex, tanggal, bulan, dari, sampai, tahun);
+                    ReportDataSource rds = new ReportDataSource("DataSetDPengeluaran", dt);
+                    ReportDataSource rds2 = new ReportDataSource("DataSetHPengeluaran", dt);
+
+                    reportViewer1.LocalReport.ReportPath = "LaporanPembelianDetail.rdlc";
+                    reportViewer1.LocalReport.DataSources.Clear();
+                    reportViewer1.LocalReport.DataSources.Add(rds);
+                    reportViewer1.LocalReport.DataSources.Add(rds2);
+
+                    reportViewer1.LocalReport.DisplayName = "Laporan Pengeluaran Detail Tahun " + tahun;
+                    reportViewer1.LocalReport.SetParameters(rParams);
+                    reportViewer1.LocalReport.SetParameters(ParameterTanggal);
+                }
+
             }
             else
             {
@@ -158,16 +216,69 @@ namespace Restaurant_Silvana
                         ReportDataSource rds = new ReportDataSource("DataSetHPembelian", dt);
                         ReportDataSource rds2 = new ReportDataSource("DataSetHtrans", dt2);
 
+
                         reportViewer1.LocalReport.ReportPath = "LaporanPenjualandanPembelian.rdlc";
                         reportViewer1.LocalReport.DataSources.Clear();
                         reportViewer1.LocalReport.DataSources.Add(rds);
                         reportViewer1.LocalReport.DataSources.Add(rds2);
                         tanggal = theDate.ToString("dd-MM-yyyy");
-                        reportViewer1.LocalReport.DisplayName = "Laporan Pembelian " + tanggal;
-                        //reportViewer1.LocalReport.SetParameters(rParams);
-                        //reportViewer1.LocalReport.SetParameters(ParameterTanggal);
+                        reportViewer1.LocalReport.DisplayName = "Laporan Penjualan dan Pembelian " + tanggal;
+                        reportViewer1.LocalReport.SetParameters(rParams);
+                        reportViewer1.LocalReport.SetParameters(ParameterTanggal);
                     }
-                    
+
+                    else if (pilihReport == 3)
+                    {
+                        DataTable dt = objDAL.ReadSumMakananYangTerjual(CB_Periode.SelectedIndex, tanggal, bulan, dari, sampai, tahun);
+                        
+                        ReportDataSource rds = new ReportDataSource("DataSetDtrans", dt);
+                        ReportDataSource rds2 = new ReportDataSource("DataSetHtrans", dt);
+
+
+                        reportViewer1.LocalReport.ReportPath = "LaporanMakananYangDipesan.rdlc";
+                        reportViewer1.LocalReport.DataSources.Clear();
+                        reportViewer1.LocalReport.DataSources.Add(rds);
+                        reportViewer1.LocalReport.DataSources.Add(rds2);
+                        tanggal = theDate.ToString("dd-MM-yyyy");
+                        reportViewer1.LocalReport.DisplayName = "Laporan Makanan yang Terjual " + tanggal;
+                        reportViewer1.LocalReport.SetParameters(rParams);
+                        reportViewer1.LocalReport.SetParameters(ParameterTanggal);
+                    }
+
+                    else if (pilihReport == 4)
+                    {
+                        DataTable dt = objDAL.ReadDtransWithCondition(CB_Periode.SelectedIndex, tanggal, bulan, dari, sampai, tahun);
+                        ReportDataSource rds = new ReportDataSource("DataSetDtrans", dt);
+                        ReportDataSource rds2 = new ReportDataSource("DataSetHtrans", dt);
+
+                        reportViewer1.LocalReport.ReportPath = "LaporanPenjualanDetail.rdlc";
+                        reportViewer1.LocalReport.DataSources.Clear();
+                        reportViewer1.LocalReport.DataSources.Add(rds);
+                        reportViewer1.LocalReport.DataSources.Add(rds2);
+
+                        tanggal = theDate.ToString("dd-MM-yyyy");
+                        reportViewer1.LocalReport.DisplayName = "Laporan Detail Penjualan " + tanggal;
+                        reportViewer1.LocalReport.SetParameters(rParams);
+                        reportViewer1.LocalReport.SetParameters(ParameterTanggal);
+                    }
+
+                    else if (pilihReport == 5)
+                    {
+                        DataTable dt = objDAL.ReadDPengeluaranWithCondition(CB_Periode.SelectedIndex, tanggal, bulan, dari, sampai, tahun);
+                        ReportDataSource rds = new ReportDataSource("DataSetDPengeluaran", dt);
+                        ReportDataSource rds2 = new ReportDataSource("DataSetHPengeluaran", dt);
+
+                        reportViewer1.LocalReport.ReportPath = "LaporanPembelianDetail.rdlc";
+                        reportViewer1.LocalReport.DataSources.Clear();
+                        reportViewer1.LocalReport.DataSources.Add(rds);
+                        reportViewer1.LocalReport.DataSources.Add(rds2);
+
+                        tanggal = theDate.ToString("dd-MM-yyyy");
+                        reportViewer1.LocalReport.DisplayName = "Laporan Detail Pembelian " + tanggal;
+                        reportViewer1.LocalReport.SetParameters(rParams);
+                        reportViewer1.LocalReport.SetParameters(ParameterTanggal);
+                    }
+
 
                 }
                 else if (periode == 1) //bulan ini
@@ -208,7 +319,75 @@ namespace Restaurant_Silvana
                         reportViewer1.LocalReport.SetParameters(rParams);
                         reportViewer1.LocalReport.SetParameters(ParameterTanggal);
                     }
-                    
+
+                    else if (pilihReport == 2)
+                    {
+                        DataTable dt = objDAL.ReadSumHtransHpengeluaran(CB_Periode.SelectedIndex, tanggal, bulan, dari, sampai, tahun);
+                        
+
+                        ReportDataSource rds = new ReportDataSource("DataSetHPembelian", dt);
+                        ReportDataSource rds2 = new ReportDataSource("DataSetHtrans", dt);
+
+                        reportViewer1.LocalReport.ReportPath = "LaporanPenjualandanPembelian.rdlc";
+                        reportViewer1.LocalReport.DataSources.Clear();
+                        reportViewer1.LocalReport.DataSources.Add(rds);
+                        reportViewer1.LocalReport.DataSources.Add(rds2);
+                        bulan = theDate.ToString("MMMM", culture);
+                        reportViewer1.LocalReport.DisplayName = "Laporan Penjualan dan Pembelian Bulan " + bulan + " " + tahun;
+                        reportViewer1.LocalReport.SetParameters(rParams);
+                        reportViewer1.LocalReport.SetParameters(ParameterTanggal);
+                    }
+
+                    else if (pilihReport == 3)
+                    {
+                        DataTable dt = objDAL.ReadSumMakananYangTerjual(CB_Periode.SelectedIndex, tanggal, bulan, dari, sampai, tahun);
+
+                        ReportDataSource rds = new ReportDataSource("DataSetDtrans", dt);
+                        ReportDataSource rds2 = new ReportDataSource("DataSetHtrans", dt);
+
+                        reportViewer1.LocalReport.ReportPath = "LaporanMakananYangDipesan.rdlc";
+                        reportViewer1.LocalReport.DataSources.Clear();
+                        reportViewer1.LocalReport.DataSources.Add(rds);
+                        reportViewer1.LocalReport.DataSources.Add(rds2);
+                        bulan = theDate.ToString("MMMM", culture);
+                        reportViewer1.LocalReport.DisplayName = "Laporan Makanan yang Terjual Bulan " + bulan + " " + tahun;
+                        reportViewer1.LocalReport.SetParameters(rParams);
+                        reportViewer1.LocalReport.SetParameters(ParameterTanggal);
+                    }
+
+                    else if (pilihReport == 4)
+                    {
+                        DataTable dt = objDAL.ReadDtransWithCondition(CB_Periode.SelectedIndex, tanggal, bulan, dari, sampai, tahun);
+
+                        ReportDataSource rds = new ReportDataSource("DataSetDtrans", dt);
+                        ReportDataSource rds2 = new ReportDataSource("DataSetHtrans", dt);
+
+                        reportViewer1.LocalReport.ReportPath = "LaporanPenjualanDetail.rdlc";
+                        reportViewer1.LocalReport.DataSources.Clear();
+                        reportViewer1.LocalReport.DataSources.Add(rds);
+                        reportViewer1.LocalReport.DataSources.Add(rds2);
+                        bulan = theDate.ToString("MMMM", culture);
+                        reportViewer1.LocalReport.DisplayName = "Laporan Detail Penjualan Bulan " + bulan + " " + tahun;
+                        reportViewer1.LocalReport.SetParameters(rParams);
+                        reportViewer1.LocalReport.SetParameters(ParameterTanggal);
+                    }
+
+                    else if (pilihReport == 5)
+                    {
+                        DataTable dt = objDAL.ReadDPengeluaranWithCondition(CB_Periode.SelectedIndex, tanggal, bulan, dari, sampai, tahun);
+
+                        ReportDataSource rds = new ReportDataSource("DataSetDPengeluaran", dt);
+                        ReportDataSource rds2 = new ReportDataSource("DataSetHPengeluaran", dt);
+
+                        reportViewer1.LocalReport.ReportPath = "LaporanPembelianDetail.rdlc";
+                        reportViewer1.LocalReport.DataSources.Clear();
+                        reportViewer1.LocalReport.DataSources.Add(rds);
+                        reportViewer1.LocalReport.DataSources.Add(rds2);
+                        bulan = theDate.ToString("MMMM", culture);
+                        reportViewer1.LocalReport.DisplayName = "Laporan Detail Pembelian Bulan " + bulan + " " + tahun;
+                        reportViewer1.LocalReport.SetParameters(rParams);
+                        reportViewer1.LocalReport.SetParameters(ParameterTanggal);
+                    }
 
 
                 }
@@ -247,7 +426,70 @@ namespace Restaurant_Silvana
                         reportViewer1.LocalReport.SetParameters(rParams);
                         reportViewer1.LocalReport.SetParameters(ParameterTanggal);
                     }
-                    
+
+                    else if (pilihReport == 2)
+                    {
+                        DataTable dt = objDAL.ReadSumHtransHpengeluaran(CB_Periode.SelectedIndex, tanggal, bulan, dari, sampai, tahun);
+
+                        ReportDataSource rds = new ReportDataSource("DataSetHPembelian", dt);
+                        ReportDataSource rds2 = new ReportDataSource("DataSetHtrans", dt);
+                        reportViewer1.LocalReport.ReportPath = "LaporanPenjualandanPembelianTahun.rdlc";
+
+                        reportViewer1.LocalReport.DataSources.Clear();
+                        reportViewer1.LocalReport.DataSources.Add(rds);
+                        reportViewer1.LocalReport.DataSources.Add(rds2);
+                        reportViewer1.LocalReport.DisplayName = "Laporan Penjualan dan Pembelian Tahun " + tahun;
+                        reportViewer1.LocalReport.SetParameters(rParams);
+                        reportViewer1.LocalReport.SetParameters(ParameterTanggal);
+                    }
+
+                    else if (pilihReport == 3)
+                    {
+                        DataTable dt = objDAL.ReadSumMakananYangTerjual(CB_Periode.SelectedIndex, tanggal, bulan, dari, sampai, tahun);
+
+                        ReportDataSource rds = new ReportDataSource("DataSetDtrans", dt);
+                        ReportDataSource rds2 = new ReportDataSource("DataSetHtrans", dt);
+                        reportViewer1.LocalReport.ReportPath = "LaporanMakananYangDipesan.rdlc";
+
+                        reportViewer1.LocalReport.DataSources.Clear();
+                        reportViewer1.LocalReport.DataSources.Add(rds);
+                        reportViewer1.LocalReport.DataSources.Add(rds2);
+                        reportViewer1.LocalReport.DisplayName = "Laporan Makanan yang Terjual Tahun " + tahun;
+                        reportViewer1.LocalReport.SetParameters(rParams);
+                        reportViewer1.LocalReport.SetParameters(ParameterTanggal);
+                    }
+
+                    else if(pilihReport == 4)
+                    {
+                        DataTable dt = objDAL.ReadDtransWithCondition(CB_Periode.SelectedIndex, tanggal, bulan, dari, sampai, tahun);
+
+                        ReportDataSource rds = new ReportDataSource("DataSetDtrans", dt);
+                        ReportDataSource rds2 = new ReportDataSource("DataSetHtrans", dt);
+                        reportViewer1.LocalReport.ReportPath = "LaporanPenjualanDetail.rdlc";
+
+                        reportViewer1.LocalReport.DataSources.Clear();
+                        reportViewer1.LocalReport.DataSources.Add(rds);
+                        reportViewer1.LocalReport.DataSources.Add(rds2);
+                        reportViewer1.LocalReport.DisplayName = "Laporan Detail Penjualan Tahun " + tahun;
+                        reportViewer1.LocalReport.SetParameters(rParams);
+                        reportViewer1.LocalReport.SetParameters(ParameterTanggal);
+                    }
+
+                    else if (pilihReport == 5)
+                    {
+                        DataTable dt = objDAL.ReadDPengeluaranWithCondition(CB_Periode.SelectedIndex, tanggal, bulan, dari, sampai, tahun);
+
+                        ReportDataSource rds = new ReportDataSource("DataSetDPengeluaran", dt);
+                        ReportDataSource rds2 = new ReportDataSource("DataSetHPengeluaran", dt);
+                        reportViewer1.LocalReport.ReportPath = "LaporanPembelianDetail.rdlc";
+
+                        reportViewer1.LocalReport.DataSources.Clear();
+                        reportViewer1.LocalReport.DataSources.Add(rds);
+                        reportViewer1.LocalReport.DataSources.Add(rds2);
+                        reportViewer1.LocalReport.DisplayName = "Laporan Detail Pembelian Tahun " + tahun;
+                        reportViewer1.LocalReport.SetParameters(rParams);
+                        reportViewer1.LocalReport.SetParameters(ParameterTanggal);
+                    }
 
 
                 }
@@ -305,7 +547,119 @@ namespace Restaurant_Silvana
                         reportViewer1.LocalReport.SetParameters(ParameterTanggal);
                     }
 
-                    
+                    else if(pilihReport == 2)
+                    {
+                        
+                        DataTable dt = objDAL.ReadSumHtransHpengeluaran(CB_Periode.SelectedIndex, tanggal, bulan, dari, sampai, tahun);
+                        
+                        ReportDataSource rds = new ReportDataSource("DataSetHPembelian", dt);
+                        ReportDataSource rds2 = new ReportDataSource("DataSetHtrans", dt);
+
+                        reportViewer1.LocalReport.ReportPath = "LaporanPenjualandanPembelian.rdlc";
+                        reportViewer1.LocalReport.DataSources.Clear();
+                        reportViewer1.LocalReport.DataSources.Add(rds);
+                        reportViewer1.LocalReport.DataSources.Add(rds2);
+                        dari = tmp_dari.ToString("dd-MM-yyyy");
+                        sampai = tmp_sampai.ToString("dd-MM-yyyy");
+
+                        Microsoft.Reporting.WinForms.ReportParameter[] rParams = new Microsoft.Reporting.WinForms.ReportParameter[]
+                        {
+
+                            new Microsoft.Reporting.WinForms.ReportParameter("Periode", dari + " s/d " + sampai),
+                            new Microsoft.Reporting.WinForms.ReportParameter("ColumnVisible", "False"),
+                            new Microsoft.Reporting.WinForms.ReportParameter("TanggalBulan", "Tanggal")
+                        };
+
+                        reportViewer1.LocalReport.DisplayName = "Laporan Penjualan dan Pembelian dari " + dari + " sampai " + sampai;
+                        reportViewer1.LocalReport.SetParameters(rParams);
+                        reportViewer1.LocalReport.SetParameters(ParameterTanggal);
+                    }
+
+                    else if (pilihReport == 3)
+                    {
+
+                        DataTable dt = objDAL.ReadSumMakananYangTerjual(CB_Periode.SelectedIndex, tanggal, bulan, dari, sampai, tahun);
+
+                        ReportDataSource rds = new ReportDataSource("DataSetDtrans", dt);
+                        ReportDataSource rds2 = new ReportDataSource("DataSetHtrans", dt);
+                        reportViewer1.LocalReport.ReportPath = "LaporanMakananYangDipesan.rdlc";
+
+                        reportViewer1.LocalReport.DataSources.Clear();
+                        reportViewer1.LocalReport.DataSources.Add(rds);
+                        reportViewer1.LocalReport.DataSources.Add(rds2);
+                        dari = tmp_dari.ToString("dd-MM-yyyy");
+                        sampai = tmp_sampai.ToString("dd-MM-yyyy");
+
+                        Microsoft.Reporting.WinForms.ReportParameter[] rParams = new Microsoft.Reporting.WinForms.ReportParameter[]
+                        {
+
+                            new Microsoft.Reporting.WinForms.ReportParameter("Periode", dari + " s/d " + sampai),
+                            new Microsoft.Reporting.WinForms.ReportParameter("ColumnVisible", "False"),
+                            new Microsoft.Reporting.WinForms.ReportParameter("TanggalBulan", "Tanggal")
+                        };
+
+                        reportViewer1.LocalReport.DisplayName = "Laporan Makanan yang Terjual Dari " + dari + " Sampai " + sampai;
+                        reportViewer1.LocalReport.SetParameters(rParams);
+                        reportViewer1.LocalReport.SetParameters(ParameterTanggal);
+                    }
+
+                    else if (pilihReport == 4)
+                    {
+
+                        DataTable dt = objDAL.ReadDtransWithCondition(CB_Periode.SelectedIndex, tanggal, bulan, dari, sampai, tahun);
+
+                        ReportDataSource rds = new ReportDataSource("DataSetDtrans", dt);
+                        ReportDataSource rds2 = new ReportDataSource("DataSetHtrans", dt);
+                        reportViewer1.LocalReport.ReportPath = "LaporanPenjualanDetail.rdlc";
+
+                        reportViewer1.LocalReport.DataSources.Clear();
+                        reportViewer1.LocalReport.DataSources.Add(rds);
+                        reportViewer1.LocalReport.DataSources.Add(rds2);
+                        dari = tmp_dari.ToString("dd-MM-yyyy");
+                        sampai = tmp_sampai.ToString("dd-MM-yyyy");
+
+                        Microsoft.Reporting.WinForms.ReportParameter[] rParams = new Microsoft.Reporting.WinForms.ReportParameter[]
+                        {
+
+                            new Microsoft.Reporting.WinForms.ReportParameter("Periode", dari + " s/d " + sampai),
+                            new Microsoft.Reporting.WinForms.ReportParameter("ColumnVisible", "False"),
+                            new Microsoft.Reporting.WinForms.ReportParameter("TanggalBulan", "Tanggal")
+                        };
+
+                        reportViewer1.LocalReport.DisplayName = "Laporan Detail Penjualan Dari " + dari + " Sampai " + sampai;
+                        reportViewer1.LocalReport.SetParameters(rParams);
+                        reportViewer1.LocalReport.SetParameters(ParameterTanggal);
+                    }
+
+                    else if (pilihReport == 5)
+                    {
+
+                        DataTable dt = objDAL.ReadDPengeluaranWithCondition(CB_Periode.SelectedIndex, tanggal, bulan, dari, sampai, tahun);
+
+                        ReportDataSource rds = new ReportDataSource("DataSetDPengeluaran", dt);
+                        ReportDataSource rds2 = new ReportDataSource("DataSetHPengeluaran", dt);
+                        reportViewer1.LocalReport.ReportPath = "LaporanPembelianDetail.rdlc";
+
+                        reportViewer1.LocalReport.DataSources.Clear();
+                        reportViewer1.LocalReport.DataSources.Add(rds);
+                        reportViewer1.LocalReport.DataSources.Add(rds2);
+                        dari = tmp_dari.ToString("dd-MM-yyyy");
+                        sampai = tmp_sampai.ToString("dd-MM-yyyy");
+
+                        Microsoft.Reporting.WinForms.ReportParameter[] rParams = new Microsoft.Reporting.WinForms.ReportParameter[]
+                        {
+
+                            new Microsoft.Reporting.WinForms.ReportParameter("Periode", dari + " s/d " + sampai),
+                            new Microsoft.Reporting.WinForms.ReportParameter("ColumnVisible", "False"),
+                            new Microsoft.Reporting.WinForms.ReportParameter("TanggalBulan", "Tanggal")
+                        };
+
+                        reportViewer1.LocalReport.DisplayName = "Laporan Detail Pembelian Dari " + dari + " Sampai " + sampai;
+                        reportViewer1.LocalReport.SetParameters(rParams);
+                        reportViewer1.LocalReport.SetParameters(ParameterTanggal);
+                    }
+
+
                 }
             }
 

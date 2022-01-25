@@ -1863,7 +1863,7 @@
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Franklin Gothic Medium", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DGV_DetailPesanan.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.DGV_DetailPesanan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGV_DetailPesanan.Size = new System.Drawing.Size(335, 570);
+            this.DGV_DetailPesanan.Size = new System.Drawing.Size(335, 633);
             this.DGV_DetailPesanan.TabIndex = 20;
             // 
             // Quantity
@@ -1906,6 +1906,7 @@
             this.Btn_HapusHistoryPesanan.TabIndex = 19;
             this.Btn_HapusHistoryPesanan.Text = "HAPUS";
             this.Btn_HapusHistoryPesanan.UseVisualStyleBackColor = false;
+            this.Btn_HapusHistoryPesanan.Visible = false;
             this.Btn_HapusHistoryPesanan.Click += new System.EventHandler(this.button3_Click);
             // 
             // panel12

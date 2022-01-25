@@ -1087,7 +1087,6 @@ namespace Restaurant_Silvana
 
         private void btn_dismiss_Click(object sender, EventArgs e)
         {
-            
             this.Close();
         }
 

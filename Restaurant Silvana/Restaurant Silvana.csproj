@@ -167,6 +167,21 @@
     <Compile Include="CheckOutPesanan.Designer.cs">
       <DependentUpon>CheckOutPesanan.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataSet\DataSetHPengeluaranDPengeluaran.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetHPengeluaranDPengeluaran.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\DataSetHtransDtrans.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetHtransDtrans.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\DataSetHtransHpengeluaran.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetHtransHpengeluaran.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSet\DataSetDPembelian.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -181,11 +196,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetMakananYangDipesan.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DataSet\DataSetDtrans.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetDtrans.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSet\DataSetHtrans.cs">
       <DependentUpon>DataSetHtrans.xsd</DependentUpon>
@@ -339,6 +349,12 @@
     <Content Include="LaporanPenjualandanPembelian.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="LaporanPenjualandanPembelianTahun.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="LaporanPenjualanDetail.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -377,6 +393,39 @@
     <EmbeddedResource Include="TambahMenu.resx">
       <DependentUpon>TambahMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DataSet\DataSetHPengeluaranDPengeluaran.xsc">
+      <DependentUpon>DataSetHPengeluaranDPengeluaran.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSetHPengeluaranDPengeluaran.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetHPengeluaranDPengeluaran.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\DataSetHPengeluaranDPengeluaran.xss">
+      <DependentUpon>DataSetHPengeluaranDPengeluaran.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSetHtransDtrans.xsc">
+      <DependentUpon>DataSetHtransDtrans.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSetHtransDtrans.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetHtransDtrans.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\DataSetHtransDtrans.xss">
+      <DependentUpon>DataSetHtransDtrans.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSetHtransHpengeluaran.xsc">
+      <DependentUpon>DataSetHtransHpengeluaran.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\DataSetHtransHpengeluaran.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetHtransHpengeluaran.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\DataSetHtransHpengeluaran.xss">
+      <DependentUpon>DataSetHtransHpengeluaran.xsd</DependentUpon>
+    </None>
     <None Include="DataSet\DataSetDPembelian.xsc">
       <DependentUpon>DataSetDPembelian.xsd</DependentUpon>
     </None>
@@ -409,17 +458,6 @@
     </None>
     <None Include="DataSet\DataSetMakananYangDipesan.xss">
       <DependentUpon>DataSetMakananYangDipesan.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet\DataSetDtrans.xsc">
-      <DependentUpon>DataSetDtrans.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet\DataSetDtrans.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetDtrans.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DataSet\DataSetDtrans.xss">
-      <DependentUpon>DataSetDtrans.xsd</DependentUpon>
     </None>
     <None Include="DataSet\DataSetHtrans.xsc">
       <DependentUpon>DataSetHtrans.xsd</DependentUpon>

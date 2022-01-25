@@ -516,6 +516,120 @@ namespace Restaurant_Silvana.DAL
             }
         }
 
+        public DataTable ReadDtransWithCondition(int periode, string tanggal, string bulan, string dari, string sampai, string tahun)
+        {
+            Connection con = new Connection();
+            if (ConnectionState.Closed == con.connect.State)
+            {
+                con.connect.Open();
+            }
+
+            if (periode == 0) //hari ini
+            {
+                query = "SELECT h.InvoiceDate, d.InvoiceID, d.Nomor_Meja, h.Nama_Kasir, d.Nama_Makanan, d.Quantity, d.harga_makanan, d.Total_Amount from Dtrans d, Htrans h WHERE h.InvoiceDate BETWEEN @tanggal1 and @tanggal2 AND h.MejaAktif = 0 AND h.InvoiceID = d.InvoiceID";
+            }
+
+            else if (periode == 1) // bulan ini
+            {
+                query = "SELECT h.InvoiceDate, d.InvoiceID, d.Nomor_Meja, h.Nama_Kasir, d.Nama_Makanan, d.Quantity, d.harga_makanan, d.Total_Amount from Dtrans d, Htrans h WHERE MONTH(h.InvoiceDate) = @bulan AND YEAR(h.invoiceDate) = @tahun AND h.MejaAktif = 0 AND h.InvoiceID = d.InvoiceID ORDER BY h.InvoiceDate";
+            }
+
+            else if (periode == 2 || periode == 4) // tahun ini & pilih Tahun
+            {
+                query = "SELECT h.InvoiceDate, d.InvoiceID, d.Nomor_Meja, h.Nama_Kasir, d.Nama_Makanan, d.Quantity, d.harga_makanan, d.Total_Amount from Dtrans d, Htrans h WHERE YEAR(h.invoiceDate) = @tahun AND h.MejaAktif = 0 AND h.InvoiceID = d.InvoiceID ORDER BY h.InvoiceDate";
+            }
+
+            else if (periode == 3) //pilih tanggal
+            {
+                query = "SELECT h.InvoiceDate, d.InvoiceID, d.Nomor_Meja, h.Nama_Kasir, d.Nama_Makanan, d.Quantity, d.harga_makanan, d.Total_Amount from Dtrans d, Htrans h WHERE h.InvoiceDate BETWEEN @dari and @sampai AND h.MejaAktif = 0 AND h.InvoiceID = d.InvoiceID ORDER BY h.InvoiceDate";
+            }
+
+            MySqlCommand cmd = new MySqlCommand(query, con.connect);
+            try
+            {
+                using (MySqlDataAdapter sda = new MySqlDataAdapter(cmd))
+                {
+
+                    string tanggal1 = tanggal + " 00:00:00";
+                    string tanggal2 = tanggal + " 23:59:00";
+
+                    cmd.Parameters.AddWithValue("@tanggal1", tanggal1);
+                    cmd.Parameters.AddWithValue("@tanggal2", tanggal2);
+                    cmd.Parameters.AddWithValue("@bulan", bulan);
+                    cmd.Parameters.AddWithValue("@tahun", tahun);
+                    cmd.Parameters.AddWithValue("@dari", dari);
+                    cmd.Parameters.AddWithValue("@sampai", sampai);
+
+
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+                    return dt;
+                }
+            }
+
+            catch
+            {
+                throw;
+            }
+        }
+
+        public DataTable ReadDPengeluaranWithCondition(int periode, string tanggal, string bulan, string dari, string sampai, string tahun)
+        {
+            Connection con = new Connection();
+            if (ConnectionState.Closed == con.connect.State)
+            {
+                con.connect.Open();
+            }
+
+            if (periode == 0) //hari ini
+            {
+                query = "SELECT h.Tanggal_Pengeluaran, h.ID_Pengeluaran, d.Nama_Produk, d.Jumlah,d.satuan ,d.Harga_Per_Satuan, d.Sub_Total_Pengeluaran from dpengeluaran d, hpengeluaran h WHERE h.Tanggal_Pengeluaran BETWEEN @tanggal1 and @tanggal2 AND h.ID_Pengeluaran = d.ID_Pengeluaran;";
+            }
+
+            else if (periode == 1) // bulan ini
+            {
+                query = "SELECT h.Tanggal_Pengeluaran, h.ID_Pengeluaran, d.Nama_Produk, d.Jumlah,d.satuan ,d.Harga_Per_Satuan, d.Sub_Total_Pengeluaran from dpengeluaran d, hpengeluaran h WHERE MONTH(h.Tanggal_Pengeluaran) = @bulan AND YEAR(h.Tanggal_Pengeluaran) = @tahun AND h.ID_Pengeluaran = d.ID_Pengeluaran ORDER BY h.Tanggal_Pengeluaran";
+            }
+
+            else if (periode == 2 || periode == 4) // tahun ini & pilih Tahun
+            {
+                query = "SELECT h.Tanggal_Pengeluaran, h.ID_Pengeluaran, d.Nama_Produk, d.Jumlah,d.satuan ,d.Harga_Per_Satuan, d.Sub_Total_Pengeluaran from dpengeluaran d, hpengeluaran h WHERE YEAR(h.Tanggal_Pengeluaran) = @tahun AND h.ID_Pengeluaran = d.ID_Pengeluaran ORDER BY h.Tanggal_Pengeluaran";
+            }
+
+            else if (periode == 3) //pilih tanggal
+            {
+                query = "SELECT h.Tanggal_Pengeluaran, h.ID_Pengeluaran, d.Nama_Produk, d.Jumlah,d.satuan ,d.Harga_Per_Satuan, d.Sub_Total_Pengeluaran from dpengeluaran d, hpengeluaran h WHERE h.Tanggal_Pengeluaran BETWEEN @dari and @sampai AND h.ID_Pengeluaran = d.ID_Pengeluaran ORDER BY h.Tanggal_Pengeluaran";
+            }
+
+            MySqlCommand cmd = new MySqlCommand(query, con.connect);
+            try
+            {
+                using (MySqlDataAdapter sda = new MySqlDataAdapter(cmd))
+                {
+
+                    string tanggal1 = tanggal + " 00:00:00";
+                    string tanggal2 = tanggal + " 23:59:00";
+
+                    cmd.Parameters.AddWithValue("@tanggal1", tanggal1);
+                    cmd.Parameters.AddWithValue("@tanggal2", tanggal2);
+                    cmd.Parameters.AddWithValue("@bulan", bulan);
+                    cmd.Parameters.AddWithValue("@tahun", tahun);
+                    cmd.Parameters.AddWithValue("@dari", dari);
+                    cmd.Parameters.AddWithValue("@sampai", sampai);
+
+
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+                    return dt;
+                }
+            }
+
+            catch
+            {
+                throw;
+            }
+        }
+
         public DataTable ReadHPengeluaranWithCondition(int periode, string tanggal, string bulan, string dari, string sampai, string tahun)
         {
             Connection con = new Connection();
@@ -597,11 +711,11 @@ namespace Restaurant_Silvana.DAL
             //    query = "SELECT SUM(Grand_Total_Pengeluaran) AS Grand_Total_Pengeluaran, DATE(Tanggal_Pengeluaran) AS Tanggal_Pengeluaran FROM hpengeluaran WHERE YEAR(Tanggal_Pengeluaran) = @tahun GROUP BY MONTH(Tanggal_Pengeluaran);";
             //}
 
-            //else if (periode == 3) //pilih tanggal
-            //{
-            //    query = "SELECT SUM(Grand_Total_Pengeluaran) AS Grand_Total_Pengeluaran, DATE(Tanggal_Pengeluaran) AS Tanggal_Pengeluaran FROM hpengeluaran WHERE Tanggal_Pengeluaran BETWEEN @dari and @sampai GROUP BY DATE(Tanggal_Pengeluaran)";
+            else if (periode == 3) //pilih tanggal
+            {
+                query = "SELECT SUM(Grand_Total_Pengeluaran) AS Grand_Total_Pengeluaran, DATE(Tanggal_Pengeluaran) AS Tanggal_Pengeluaran FROM hpengeluaran WHERE Tanggal_Pengeluaran BETWEEN @dari and @sampai GROUP BY DATE(Tanggal_Pengeluaran)";
 
-            //}
+            }
 
             MySqlCommand cmd = new MySqlCommand(query, con.connect);
             try
@@ -655,11 +769,11 @@ namespace Restaurant_Silvana.DAL
             //    query = "SELECT SUM(Grand_Total) AS Grand_Total, SUM(Grand_Total_PPN) AS Grand_Total_PPN, DATE(InvoiceDate) AS InvoiceDate FROM htrans WHERE YEAR(invoiceDate) = @tahun AND MejaAktif = 0 GROUP BY MONTH(invoiceDate);";
             //}
 
-            //else if (periode == 3) //pilih tanggal
-            //{
-            //    query = "SELECT SUM(Grand_Total) AS Grand_Total, SUM(Grand_Total_PPN) AS Grand_Total_PPN, DATE(InvoiceDate) AS InvoiceDate FROM htrans WHERE InvoiceDate BETWEEN @dari and @sampai AND MejaAktif = 0 GROUP BY DATE(invoiceDate)";
+            else if (periode == 3) //pilih tanggal
+            {
+                query = "SELECT SUM(Grand_Total) AS Grand_Total, DATE(InvoiceDate) AS InvoiceDate FROM htrans WHERE InvoiceDate BETWEEN @dari and @sampai AND MejaAktif = 0 GROUP BY DATE(invoiceDate)";
 
-            //}
+            }
 
             MySqlCommand cmd = new MySqlCommand(query, con.connect);
             try
@@ -689,6 +803,122 @@ namespace Restaurant_Silvana.DAL
                 throw;
             }
         }
+
+        public DataTable ReadSumHtransHpengeluaran(int periode, string tanggal, string bulan, string dari, string sampai, string tahun)
+        {
+            Connection con = new Connection();
+            if (ConnectionState.Closed == con.connect.State)
+            {
+                con.connect.Open();
+            }
+
+            if (periode == 0) //hari ini
+            {
+                query = "SELECT SUM(Grand_Total) AS Grand_Total, DATE(InvoiceDate) AS InvoiceDate FROM htrans WHERE InvoiceDate BETWEEN @tanggal1 and @tanggal2 AND MejaAktif = 0 GROUP BY DATE(invoiceDate)";
+            }
+
+            else if (periode == 1) // bulan ini
+            {
+                query = "SELECT IFNULL(h.InvoiceDate,p.Tanggal_Pengeluaran) AS InvoiceDate, h.Total AS Grand_Total, p.Total AS Grand_Total_Pengeluaran FROM ( SELECT DATE(InvoiceDate) as InvoiceDate, SUM(grand_total) AS Total FROM htrans WHERE MONTH(InvoiceDate) = @bulan AND YEAR(invoiceDate) = @tahun GROUP BY DATE(InvoiceDate) ) h LEFT JOIN ( SELECT DATE(Tanggal_Pengeluaran) as Tanggal_Pengeluaran, SUM(grand_Total_Pengeluaran) AS Total FROM hpengeluaran WHERE MONTH(Tanggal_Pengeluaran) = @bulan AND YEAR(Tanggal_Pengeluaran) = @tahun GROUP BY DATE(Tanggal_Pengeluaran)) p ON DATE(h.InvoiceDate) = DATE(p.Tanggal_Pengeluaran) UNION SELECT IFNULL(h.InvoiceDate,p.Tanggal_Pengeluaran), h.Total AS TotalPenjualan, p.Total AS TotalPembelian FROM (SELECT DATE(InvoiceDate) as InvoiceDate, SUM(grand_total) AS Total FROM htrans WHERE MONTH(InvoiceDate) = @bulan AND YEAR(invoiceDate) = @tahun GROUP BY DATE(InvoiceDate) ) h RIGHT JOIN ( SELECT DATE(Tanggal_Pengeluaran) as Tanggal_Pengeluaran, SUM(grand_Total_Pengeluaran) AS Total FROM hpengeluaran WHERE MONTH(Tanggal_Pengeluaran) = @bulan AND YEAR(Tanggal_Pengeluaran) = @tahun GROUP BY DATE(Tanggal_Pengeluaran) ) p ON DATE(h.InvoiceDate) = DATE(p.Tanggal_Pengeluaran) ORDER BY `InvoiceDate` ASC";
+            }
+
+            else if (periode == 2 || periode == 4) // tahun ini & pilih Tahun
+            {
+                query = "SELECT IFNULL(h.InvoiceDate, p.Tanggal_Pengeluaran) AS InvoiceDate, h.Total AS Grand_Total, p.Total AS Grand_Total_Pengeluaran FROM(SELECT DATE(InvoiceDate) as InvoiceDate, SUM(grand_total) AS Total FROM htrans WHERE YEAR(invoiceDate) = @tahun GROUP BY MONTH(InvoiceDate)) h LEFT JOIN (SELECT DATE(Tanggal_Pengeluaran) as Tanggal_Pengeluaran, SUM(grand_Total_Pengeluaran) AS Total FROM hpengeluaran WHERE YEAR(Tanggal_Pengeluaran) = @tahun GROUP BY MONTH(Tanggal_Pengeluaran)) p ON MONTH(h.InvoiceDate) = MONTH(p.Tanggal_Pengeluaran) UNION SELECT IFNULL(h.InvoiceDate, p.Tanggal_Pengeluaran), h.Total AS TotalPenjualan, p.Total AS TotalPembelian FROM (SELECT DATE(InvoiceDate) as InvoiceDate, SUM(grand_total) AS Total FROM htrans WHERE YEAR(invoiceDate) = @tahun GROUP BY MONTH(InvoiceDate) ) h RIGHT JOIN(SELECT DATE(Tanggal_Pengeluaran) as Tanggal_Pengeluaran, SUM(grand_Total_Pengeluaran) AS Total FROM hpengeluaran WHERE YEAR(Tanggal_Pengeluaran) = @tahun GROUP BY MONTH(Tanggal_Pengeluaran)) p ON MONTH(h.InvoiceDate) = MONTH(p.Tanggal_Pengeluaran) ORDER BY `InvoiceDate` ASC";
+            }
+
+            else if (periode == 3) //pilih tanggal
+            {
+                query = "SELECT IFNULL(h.InvoiceDate,p.Tanggal_Pengeluaran) AS InvoiceDate, h.Total AS Grand_Total, p.Total AS Grand_Total_Pengeluaran FROM ( SELECT DATE(InvoiceDate) as InvoiceDate, SUM(grand_total) AS Total FROM htrans WHERE DATE(InvoiceDate) BETWEEN @dari AND @sampai GROUP BY DATE(InvoiceDate) ) h LEFT JOIN ( SELECT DATE(Tanggal_Pengeluaran) as Tanggal_Pengeluaran, SUM(grand_Total_Pengeluaran) AS Total FROM hpengeluaran WHERE DATE(Tanggal_Pengeluaran) BETWEEN @dari AND @sampai GROUP BY DATE(Tanggal_Pengeluaran)) p ON DATE(h.InvoiceDate) = DATE(p.Tanggal_Pengeluaran) UNION SELECT IFNULL(h.InvoiceDate,p.Tanggal_Pengeluaran), h.Total AS TotalPenjualan, p.Total AS TotalPembelian FROM (SELECT DATE(InvoiceDate) as InvoiceDate, SUM(grand_total) AS Total FROM htrans WHERE DATE(InvoiceDate) BETWEEN @dari AND @sampai GROUP BY DATE(InvoiceDate) ) h RIGHT JOIN ( SELECT DATE(Tanggal_Pengeluaran) as Tanggal_Pengeluaran, SUM(grand_Total_Pengeluaran) AS Total FROM hpengeluaran WHERE DATE(Tanggal_Pengeluaran) BETWEEN @dari AND @sampai GROUP BY DATE(Tanggal_Pengeluaran) ) p ON DATE(h.InvoiceDate) = DATE(p.Tanggal_Pengeluaran) ORDER BY `InvoiceDate` ASC";
+            }
+
+            MySqlCommand cmd = new MySqlCommand(query, con.connect);
+            try
+            {
+                using (MySqlDataAdapter sda = new MySqlDataAdapter(cmd))
+                {
+
+                    string tanggal1 = tanggal + " 00:00:00";
+                    string tanggal2 = tanggal + " 23:59:00";
+
+                    cmd.Parameters.AddWithValue("@tanggal1", tanggal1);
+                    cmd.Parameters.AddWithValue("@tanggal2", tanggal2);
+                    cmd.Parameters.AddWithValue("@bulan", bulan);
+                    cmd.Parameters.AddWithValue("@tahun", tahun);
+                    cmd.Parameters.AddWithValue("@dari", dari);
+                    cmd.Parameters.AddWithValue("@sampai", sampai);
+
+
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+                    return dt;
+                }
+            }
+
+            catch
+            {
+                throw;
+            }
+        }
+
+        public DataTable ReadSumMakananYangTerjual(int periode, string tanggal, string bulan, string dari, string sampai, string tahun)
+        {
+            Connection con = new Connection();
+            if (ConnectionState.Closed == con.connect.State)
+            {
+                con.connect.Open();
+            }
+
+            if (periode == 0) //hari ini
+            {
+                query = "SELECT d.Nama_Makanan, SUM(d.Quantity) AS Quantity FROM Dtrans d, Htrans h WHERE h.InvoiceDate BETWEEN @tanggal1 and @tanggal2 AND h.InvoiceID = d.InvoiceID AND h.MejaAktif = 0 GROUP BY d.Nama_Makanan ORDER BY h.InvoiceDate ASC; ";
+            }
+
+            else if (periode == 1) // bulan ini
+            {
+                query = "SELECT d.Nama_Makanan, SUM(d.Quantity) AS Quantity FROM Dtrans d, Htrans h WHERE MONTH(InvoiceDate) = @bulan AND YEAR(invoiceDate) = @tahun AND h.InvoiceID = d.InvoiceID AND h.MejaAktif = 0 GROUP BY d.Nama_Makanan ORDER BY h.InvoiceDate ASC; ";
+            }
+
+            else if (periode == 2 || periode == 4) // tahun ini & pilih Tahun
+            {
+                query = "SELECT d.Nama_Makanan, SUM(d.Quantity) AS Quantity FROM Dtrans d, Htrans h WHERE YEAR(invoiceDate) = @tahun AND h.InvoiceID = d.InvoiceID AND h.MejaAktif = 0 GROUP BY d.Nama_Makanan ORDER BY h.InvoiceDate ASC; ";
+            }
+
+            else if (periode == 3) //pilih tanggal
+            {
+                query = "SELECT d.Nama_Makanan, SUM(d.Quantity) AS Quantity FROM Dtrans d, Htrans h WHERE h.InvoiceDate BETWEEN @dari AND @sampai AND h.InvoiceID = d.InvoiceID AND h.MejaAktif = 0 GROUP BY d.Nama_Makanan ORDER BY h.InvoiceDate ASC; ";
+            }
+
+            MySqlCommand cmd = new MySqlCommand(query, con.connect);
+            try
+            {
+                using (MySqlDataAdapter sda = new MySqlDataAdapter(cmd))
+                {
+
+                    string tanggal1 = tanggal + " 00:00:00";
+                    string tanggal2 = tanggal + " 23:59:00";
+
+                    cmd.Parameters.AddWithValue("@tanggal1", tanggal1);
+                    cmd.Parameters.AddWithValue("@tanggal2", tanggal2);
+                    cmd.Parameters.AddWithValue("@bulan", bulan);
+                    cmd.Parameters.AddWithValue("@tahun", tahun);
+                    cmd.Parameters.AddWithValue("@dari", dari);
+                    cmd.Parameters.AddWithValue("@sampai", sampai);
+
+
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+                    return dt;
+                }
+            }
+
+            catch
+            {
+                throw;
+            }
+        }
+
+
 
 
 

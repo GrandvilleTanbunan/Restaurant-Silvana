@@ -163,6 +163,8 @@ namespace Restaurant_Silvana
             this.Show();
             tb_password.Text = "Password";
             tb_username.Text = "username";
+            tb_password.PasswordChar = '\0';
+
             lbl_err.Visible = false;
         }
 

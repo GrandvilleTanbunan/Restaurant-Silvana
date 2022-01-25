@@ -87,10 +87,10 @@
                   <Width>0.71948in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.64974in</Width>
+                  <Width>1.93099in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.18263in</Width>
+                  <Width>2.22806in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>2.35843in</Width>
@@ -405,7 +405,7 @@
             </TablixRowHierarchy>
             <DataSetName>DataSetHtrans</DataSetName>
             <Height>0.5in</Height>
-            <Width>6.91028in</Width>
+            <Width>7.23696in</Width>
             <Style>
               <Border>
                 <Style>Solid</Style>
@@ -558,7 +558,7 @@
         <Height>1.38195in</Height>
         <Style />
       </Body>
-      <Width>6.99738in</Width>
+      <Width>7.23696in</Width>
       <Page>
         <PageHeader>
           <Height>1.22222in</Height>
@@ -620,7 +620,7 @@
               <Top>0.79514in</Top>
               <Left>1.93679in</Left>
               <Height>0.29861in</Height>
-              <Width>1.55213in</Width>
+              <Width>2.81728in</Width>
               <ZIndex>1</ZIndex>
               <Visibility>
                 <Hidden>= iif(Parameters!ColumnVisible.Value = "False", false,true)</Hidden>

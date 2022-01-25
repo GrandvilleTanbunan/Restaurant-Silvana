@@ -34,6 +34,7 @@
             this.DTP_TahunSaja = new System.Windows.Forms.DateTimePicker();
             this.CB_Periode = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.RB_RangkumanBerdasarkanPesanan = new System.Windows.Forms.RadioButton();
             this.RB_DetailPembelian = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
             this.DTP_SampaiReport = new System.Windows.Forms.DateTimePicker();
@@ -42,7 +43,6 @@
             this.RB_Pembelian = new System.Windows.Forms.RadioButton();
             this.RB_Penjualan = new System.Windows.Forms.RadioButton();
             this.DTP_DariReport = new System.Windows.Forms.DateTimePicker();
-            this.RB_RangkumanBerdasarkanPesanan = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,7 +51,7 @@
             this.reportViewer1.Location = new System.Drawing.Point(326, 12);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(843, 681);
+            this.reportViewer1.Size = new System.Drawing.Size(843, 669);
             this.reportViewer1.TabIndex = 0;
             // 
             // btn_Load
@@ -132,6 +132,18 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Pilih Laporan";
             this.groupBox1.Enter += new System.EventHandler(this.GroupBox1_Enter);
+            // 
+            // RB_RangkumanBerdasarkanPesanan
+            // 
+            this.RB_RangkumanBerdasarkanPesanan.AutoSize = true;
+            this.RB_RangkumanBerdasarkanPesanan.Location = new System.Drawing.Point(11, 116);
+            this.RB_RangkumanBerdasarkanPesanan.Name = "RB_RangkumanBerdasarkanPesanan";
+            this.RB_RangkumanBerdasarkanPesanan.Size = new System.Drawing.Size(272, 25);
+            this.RB_RangkumanBerdasarkanPesanan.TabIndex = 21;
+            this.RB_RangkumanBerdasarkanPesanan.TabStop = true;
+            this.RB_RangkumanBerdasarkanPesanan.Text = "Rangkuman Berdasarkan Pesanan";
+            this.RB_RangkumanBerdasarkanPesanan.UseVisualStyleBackColor = true;
+            this.RB_RangkumanBerdasarkanPesanan.CheckedChanged += new System.EventHandler(this.RB_RangkumanBerdasarkanPesanan_CheckedChanged);
             // 
             // RB_DetailPembelian
             // 
@@ -217,18 +229,6 @@
             this.DTP_DariReport.Name = "DTP_DariReport";
             this.DTP_DariReport.Size = new System.Drawing.Size(122, 26);
             this.DTP_DariReport.TabIndex = 17;
-            // 
-            // RB_RangkumanBerdasarkanPesanan
-            // 
-            this.RB_RangkumanBerdasarkanPesanan.AutoSize = true;
-            this.RB_RangkumanBerdasarkanPesanan.Location = new System.Drawing.Point(11, 116);
-            this.RB_RangkumanBerdasarkanPesanan.Name = "RB_RangkumanBerdasarkanPesanan";
-            this.RB_RangkumanBerdasarkanPesanan.Size = new System.Drawing.Size(272, 25);
-            this.RB_RangkumanBerdasarkanPesanan.TabIndex = 21;
-            this.RB_RangkumanBerdasarkanPesanan.TabStop = true;
-            this.RB_RangkumanBerdasarkanPesanan.Text = "Rangkuman Berdasarkan Pesanan";
-            this.RB_RangkumanBerdasarkanPesanan.UseVisualStyleBackColor = true;
-            this.RB_RangkumanBerdasarkanPesanan.CheckedChanged += new System.EventHandler(this.RB_RangkumanBerdasarkanPesanan_CheckedChanged);
             // 
             // Laporan
             // 
